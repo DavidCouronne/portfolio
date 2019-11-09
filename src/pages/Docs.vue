@@ -1,5 +1,5 @@
 <template>
-  <Landing>
+  <Layout>
     <div class="container-inner mx-auto py-16">
       <div
         v-for="doc in $page.docs.edges"
@@ -24,7 +24,7 @@
       </div>
       <!-- end post -->
     </div>
-  </Landing>
+  </Layout>
 </template>
 
 <page-query>

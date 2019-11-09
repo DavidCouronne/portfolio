@@ -109,12 +109,12 @@
         <div class="mb-8 lg:mb-0">
           <div>Copyright 2019. All rights reserved.</div>
           <div>
-            <a
+           <!--  <a
               href="/rss.xml"
               class="text-white hover:text-gray-400 font-normal"
               >RSS Feed</a
             >
-            |
+            | -->
             <a
               href="/sitemap.xml"
               class="text-white hover:text-gray-400 font-normal"
@@ -125,7 +125,7 @@
         <ul class="flex items-center">
           <li class="mr-8">
             <a
-              href="mailto:me@example.com"
+              href="mailto:couronne.david@gmail.com"
               class="text-white hover:text-gray-400"
             >
               <svg
@@ -142,7 +142,7 @@
             </a>
           </li>
 
-          <li class="mr-8">
+          <!-- <li class="mr-8">
             <a
               href="https://youtube.com/drehimself"
               target="_blank"
@@ -160,11 +160,11 @@
                 />
               </svg>
             </a>
-          </li>
+          </li> -->
 
           <li class="mr-8">
             <a
-              href="https://github.com/drehimself/gridsome-portfolio-starter"
+              href="https://github.com/DavidCouronne/"
               target="_blank"
               class="text-white hover:text-gray-400"
             >
@@ -184,7 +184,7 @@
 
           <li class="mr-8">
             <a
-              href="https://twitter.com/drehimself"
+              href="https://twitter.com/nollan94"
               target="_blank"
               class="text-white hover:text-gray-400"
             >
@@ -202,7 +202,7 @@
             </a>
           </li>
 
-          <li>
+          <!-- <li>
             <a
               href="https://instagram.com"
               target="_blank"
@@ -220,7 +220,7 @@
                 />
               </svg>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </footer>
