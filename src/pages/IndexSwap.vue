@@ -21,10 +21,8 @@
 
     <div class="container-inner mx-auto">
       <p class="text-lg sm:text-xl">
-        Greetings! I’m David.
-        . I added more
-        features and decided to release it as an open source project. Check it
-        out on
+        Greetings! I’m David. . I added more features and decided to release it
+        as an open source project. Check it out on
         <a href="https://github.com/drehimself/gridsome-portfolio-starter"
           >GitHub</a
         >

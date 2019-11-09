@@ -8,9 +8,7 @@
         class="container mx-auto flex flex-wrap justify-between items-center py-8"
       >
         <div>
-          <g-link  to="/"
-            >David Couronné</g-link>
-          
+          <g-link to="/">David Couronné</g-link>
         </div>
         <div class="block lg:hidden">
           <button
@@ -109,7 +107,7 @@
         <div class="mb-8 lg:mb-0">
           <div>Copyright 2019. All rights reserved.</div>
           <div>
-           <!--  <a
+            <!--  <a
               href="/rss.xml"
               class="text-white hover:text-gray-400 font-normal"
               >RSS Feed</a
@@ -259,7 +257,7 @@ import ThemeSwitcher from '../components/ThemeSwitcher'
 export default {
   components: {
     SearchInput,
-    ThemeSwitcher,
+    ThemeSwitcher
     // BackToTop
   },
   mounted() {

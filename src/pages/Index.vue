@@ -1,6 +1,5 @@
 <template>
   <Landing>
-
     <!-- section 1 -->
 
     <section class="bg-white border-b py-8">
@@ -765,10 +764,5 @@
         Action!
       </button>
     </section>
-
-
-
-
-
   </Landing>
 </template>

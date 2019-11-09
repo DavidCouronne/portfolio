@@ -9,11 +9,11 @@
         class="container mx-auto flex flex-wrap justify-between items-center py-8"
       >
         <div class="uppercase  font-bold  ">
-          <g-link  to="/" class="text-copy-primary hover:text-gray-600"
-            >David Couronné </g-link>
-          
+          <g-link to="/" class="text-copy-primary hover:text-gray-600"
+            >David Couronné
+          </g-link>
         </div>
-        
+
         <div class="block lg:hidden">
           <button
             @click="toggle"
@@ -103,7 +103,6 @@
     <!-- end navbar -->
 
     <!--Hero-->
-    
 
     <Hero />
     <!-- end hero -->
@@ -112,7 +111,6 @@
     <HeroSvg />
     <!-- end hero svg -->
 
-    
     <!-- slot -->
     <slot />
     <!-- slot -->
@@ -194,7 +192,6 @@ export default {
   },
   computed: {}
 }
-
 </script>
 
 <style>
