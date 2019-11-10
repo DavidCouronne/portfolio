@@ -6,7 +6,7 @@ import LandingLayout from '~/layouts/Landing.vue'
 import VueScrollTo from 'vue-scrollto'
 import VueFuse from 'vue-fuse'
 
-import './assets/style/index.scss'
+import './assets/style/index.css'
 
 export default function(Vue, { head }) {
   // Set default layout as a global component

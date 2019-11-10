@@ -1,11 +1,11 @@
-/* purgecss start ignore */
 
-@import './tomorrow.scss';
-@import './prism-line-number.scss';
+
+@import './_tomorrow.scss';
+@import './_prism-line-number.scss';
 
 //plugin gridsome-prism-all
 
-@import './code-title';
+@import './_code-title';
 
 .gridsome-highlight {
   background-color: #2d2d2d;
@@ -58,4 +58,4 @@
   box-sizing: initial; // Reset vuetify - empeche la barre de scroll !
 }
 
-/* purgecss end ignore */
+
