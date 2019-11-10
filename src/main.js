@@ -26,16 +26,6 @@ export default function(Vue, { head }) {
       'Gridsome,Vue,Tailwind,Tailwind CSS,JavaScript,HTML,CSS,Vue.js,VueJS'
   })
 
-  head.meta.push({
-    name: 'description',
-    content: 'Gridsome Portfolio Starter'
-  })
-
-  head.meta.push({
-    name: 'author',
-    content: 'Andre Madarang'
-  })
-
   head.link.push({
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Nunito+Sans:400,700'

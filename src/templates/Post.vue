@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <SEOPage/>
+    <SEOPage />
     <div class="container-inner mx-auto my-16 bg-background-content">
       <h1 class="text-4xl font-bold leading-tight">{{ $page.post.title }}</h1>
       <div class="text-xl text-gray-600 mb-4">{{ $page.post.date }}</div>
@@ -11,7 +11,7 @@
           :key="tag.id"
           class="inline-block bg-background-primary rounded-full px-3 py-1 text-sm font-semibold text-primary mr-2"
         >
-         # {{ tag.title }}
+          # {{ tag.title }}
         </g-link>
       </div>
       <div class="markdown-body mb-8" v-html="$page.post.content" />
@@ -55,10 +55,9 @@ query Post ($id: ID!) {
 <script>
 import SEOPage from '../components/base/SEOArticle.vue'
 export default {
-  components:{
+  components: {
     SEOPage
-  },
-  
+  }
 }
 </script>
 

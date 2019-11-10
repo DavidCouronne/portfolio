@@ -12,7 +12,7 @@ const postcssPlugins = [tailwind()]
 if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
 
 module.exports = {
-  siteName: 'David Couronné',
+  siteName: 'Portfolio de David Couronné',
   siteDescription:
     'Portfolio de David Couronné powerd by Gridsome and Tailwind CSS',
   siteUrl: 'https://davidcouronne.netlify.com',

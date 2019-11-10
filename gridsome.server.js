@@ -8,49 +8,11 @@
 const fs = require('fs')
 const path = require('path')
 const pick = require('lodash.pick')
-const { pathPrefix } = require('./gridsome.config')
 
 module.exports = function(api, options) {
-  api.loadSource(store => {
-    /*
-    Clean the pathPrefix
-    ====================
-    not used =>  '/'
-    ''       =>  '/'
-    '/'      =>  '/'
-    '/path'  =>  '/path'
-    'path'   =>  '/path'
-    'path/'  =>  '/path'
-    '/path/' =>  '/path'
-    */
-    const cleanedPathPrefix = `${
-      pathPrefix
-        ? ['', ...pathPrefix.split('/').filter(dir => dir.length)].join('/')
-        : ''
-    }`
-
-    /*
-    Query
-    =====
-    <static-query>        <!-- or a page-query -->
-    {
-      metaData{
-        pathPrefix
-      }
-    }
-    </static-query>
-
-    Requests for static files should look like this:
-    ===============================================
-    Using static-queries: axios( this.$static.metaData.pathPrefix + "/fileName" )
-    Using page-queries,   axios( this.$page.metaData.pathPrefix   + "/fileName" )
-    */
-    store.addMetadata('pathPrefix', cleanedPathPrefix)
-  })
-
   api.beforeBuild(({ store }) => {
     // Generate an index file for Fuse to search Posts
-    const { collection } = store.getContentType('Post')
+    const { collection } = store.getCollection('Post')
 
     const posts = collection.data.map(post => {
       return pick(post, ['title', 'path', 'summary'])

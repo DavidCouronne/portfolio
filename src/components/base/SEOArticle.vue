@@ -15,9 +15,12 @@ query {
 export default {
   metaInfo() {
     return {
-        link:[
-            {rel:'canonical', href: this.$static.metadata.siteUrl + this.$page.post.path}
-        ],
+      link: [
+        {
+          rel: 'canonical',
+          href: this.$static.metadata.siteUrl + this.$page.post.path
+        }
+      ],
       meta: [
         { name: 'description', content: this.$page.post.description },
 
@@ -45,16 +48,17 @@ export default {
             '@type': 'BlogPosting',
             description: this.$page.post.description,
             datePublished: this.$page.post.date,
-            
-            dateModified:this.$page.post.date,
-            mainEntityOfPage: this.$static.metadata.siteUrl + this.$page.post.path,
+
+            dateModified: this.$page.post.date,
+            mainEntityOfPage:
+              this.$static.metadata.siteUrl + this.$page.post.path,
             author: {
-              name: "David Couronné"
+              name: 'David Couronné'
             },
             headline: this.$page.post.title,
             image: this.$page.post.cover_image,
             publisher: {
-                name:"David Couronné"
+              name: 'David Couronné'
             }
           }
         }
