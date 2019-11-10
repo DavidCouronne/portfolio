@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 @import './tomorrow.scss';
 @import './prism-line-number.scss';
 
@@ -55,3 +57,5 @@
 
   box-sizing: initial; // Reset vuetify - empeche la barre de scroll !
 }
+
+/* purgecss end ignore */
