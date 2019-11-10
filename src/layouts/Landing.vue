@@ -127,12 +127,16 @@ import Hero from './Partials/Hero.vue'
 import HeroSvg from './Partials/HeroSvg.vue'
 import Footer from './Partials/Footer.vue'
 import debounce from 'lodash.debounce'
+import SearchInput from '../components/SearchInput'
+import ThemeSwitcher from '../components/ThemeSwitcher'
 export default {
   components: {
     NavBar,
     Hero,
     HeroSvg,
-    Footer
+    Footer,
+    SearchInput,
+    ThemeSwitcher
   },
   data() {
     return {
@@ -140,7 +144,8 @@ export default {
       header: null,
       navcontent: null,
       navaction: null,
-      theme: 'theme-light'
+      theme: 'theme-light',
+      isOpen: false,
     }
   },
   mounted() {
@@ -158,6 +163,9 @@ export default {
     )
   },
   methods: {
+    toggle() {
+      this.isOpen = !this.isOpen
+    },
     getScrollTop() {
       if (this.scrollpos > 100) {
         this.header.classList.add('bg-black')
