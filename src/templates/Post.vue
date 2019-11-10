@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <SEOPage/>
     <div class="container-inner mx-auto my-16 bg-background-content">
       <h1 class="text-4xl font-bold leading-tight">{{ $page.post.title }}</h1>
       <div class="text-xl text-gray-600 mb-4">{{ $page.post.date }}</div>
@@ -52,12 +53,12 @@ query Post ($id: ID!) {
 </page-query>
 
 <script>
+import SEOPage from '../components/base/SEOArticle.vue'
 export default {
-  metaInfo() {
-    return {
-      title: this.$page.post.title
-    }
-  }
+  components:{
+    SEOPage
+  },
+  
 }
 </script>
 
