@@ -15,7 +15,7 @@ module.exports = {
   siteName: 'David Couronné',
   siteDescription:
     'Portfolio de David Couronné powerd by Gridsome and Tailwind CSS',
-  siteUrl: 'https://gridsome-portfolio-starter.netlify.com',
+  siteUrl: 'https://davidcouronne.netlify.com',
   plugins: [
     {
       use: '@gridsome/vue-remark',
