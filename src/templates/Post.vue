@@ -8,9 +8,9 @@
           :to="tag.path"
           v-for="tag in $page.post.tags"
           :key="tag.id"
-          class="bg-gray-300 rounded-full px-4 py-2 mr-4 hover:bg-green-300"
+          class="inline-block bg-background-primary rounded-full px-3 py-1 text-sm font-semibold text-primary mr-2"
         >
-          {{ tag.title }}
+         # {{ tag.title }}
         </g-link>
       </div>
       <div class="markdown-body mb-8" v-html="$page.post.content" />
