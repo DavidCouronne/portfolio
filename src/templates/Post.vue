@@ -21,16 +21,32 @@
   </Layout>
 </template>
 
+<static-query>
+query {
+  metadata{
+    siteUrl
+    pathPrefix
+    }
+    }
+</static-query>
+
 <page-query>
-query Post ($path: String!) {
-  post: post (path: $path) {
+query Post ($id: ID!) {
+  post: post (id: $id) {
     title
-    date (format: "MMMM D, Y")
-    content
+    path
+    date (format: "D. MMMM YYYY")
+    timeToRead
     tags {
+      id
       title
       path
     }
+    description
+    content
+    author
+    avatar
+    cover_image
   }
 }
 </page-query>
