@@ -15,6 +15,9 @@ query {
 export default {
   metaInfo() {
     return {
+        link:[
+            {rel:'canonical', href: this.$static.metadata.siteUrl + this.$page.post.path}
+        ],
       meta: [
         { name: 'description', content: this.$page.post.description },
 
