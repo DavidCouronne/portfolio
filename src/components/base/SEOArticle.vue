@@ -42,11 +42,17 @@ export default {
             '@type': 'BlogPosting',
             description: this.$page.post.description,
             datePublished: this.$page.post.date,
+            
+            dateModified:this.$page.post.date,
+            mainEntityOfPage: this.$static.metadata.siteUrl + this.$page.post.path,
             author: {
               name: "David Couronné"
             },
             headline: this.$page.post.title,
-            image: this.$page.post.cover_image
+            image: this.$page.post.cover_image,
+            publisher: {
+                name:"David Couronné"
+            }
           }
         }
       ]
