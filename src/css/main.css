@@ -17,6 +17,8 @@
 
   --border-border-color-primary: white;
   --bg-background-primary: #F3F7F9;
+
+  --bg-color: #F3F7F9;
   --bg-content-color: #fff;
   --bg-code: #fffbf3;
   --border-color:  rgba(0,0,0,.1);
@@ -57,6 +59,16 @@
   --text-copy-secondary: #e2e8f0;
 
   --border-border-color-primary:  #1a202c;
+
+  --bg-color: #0D2538;
+  --bg-content-color: #0f2d44;
+  --bg-code: rgba(0,0,0,.3);
+  --border-color:  rgba(255,255,255,.1);
+  --body-color: #ced8de;
+  --title-color: #fff;
+  --accent-color: #af9cef;
+  --accent-hover: #ae9aef;
+
 }
 
 .theme-dark .markdown-body {
@@ -68,17 +80,19 @@
 }
 
 a {
-  @apply text-green-700 font-bold;
+  color: var(--accent-color);
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
 }
 
 a:hover {
-  @apply text-green-800;
+  opacity: .8;
 }
 
-nav .active {
+/* nav .active {
   font-weight: bold;
   @apply border-black border-b;
-}
+} */
 
 .container-inner {
   padding-left: 1rem;

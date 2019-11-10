@@ -9,17 +9,29 @@ module.exports = {
         '14': '14px'
       }
     },
+    borderColor: {
+      primary: 'var(--border-color)',
+      accent: 'var(--accent-color)'
+    },
     container: {
       padding: '1rem'
     },
     colors: {
       background: {
-        primary: 'var(--bg-background-primary)',
+        primary: 'var(--bg-color)',
         secondary: 'var(--bg-background-secondary)',
         tertiary: 'var(--bg-background-tertiary)',
 
-        form: 'var(--bg-background-form)'
+        form: 'var(--bg-background-form)',
+        content: 'var(--bg-content-color)',
+        code: 'var(--bg-code)',
+        accent: 'var(--accent-color)'
       },
+      primary: 'var(--body-color)',
+      accent: 'var(--accent-color)',
+      accenthover: 'var(--accent-hover)',
+      title: 'var(--title-color)',
+      bg: 'var(--bg-color)',
 
       copy: {
         primary: 'var(--text-copy-primary)',

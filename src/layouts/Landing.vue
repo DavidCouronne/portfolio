@@ -112,7 +112,7 @@
     <!-- end hero svg -->
 
     <!-- slot -->
-    <slot />
+    <slot :class="theme" />
     <!-- slot -->
 
     <!-- footer -->
@@ -139,7 +139,8 @@ export default {
       scrollpos: null,
       header: null,
       navcontent: null,
-      navaction: null
+      navaction: null,
+      theme: 'theme-light'
     }
   },
   mounted() {
@@ -160,6 +161,7 @@ export default {
     getScrollTop() {
       if (this.scrollpos > 100) {
         this.header.classList.add('bg-black')
+
         /* this.navaction.classList.remove('bg-white')
         this.navaction.classList.add('gradient')
         this.navaction.classList.remove('text-gray-800')

@@ -100,12 +100,12 @@
     <div class="flex-grow">
       <slot />
     </div>
-    <footer class="bg-green-700 text-white">
+    <footer class="bg-background-accent text-bg">
       <div
         class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-8"
       >
         <div class="mb-8 lg:mb-0">
-          <div>Copyright 2019. All rights reserved.</div>
+          <div>Copyright 2019.</div>
           <div>
             <!--  <a
               href="/rss.xml"
@@ -115,7 +115,7 @@
             | -->
             <a
               href="/sitemap.xml"
-              class="text-white hover:text-gray-400 font-normal"
+              class="text-bg hover:text-gray-400 font-normal"
               >Sitemap</a
             >
           </div>
@@ -124,7 +124,7 @@
           <li class="mr-8">
             <a
               href="mailto:couronne.david@gmail.com"
-              class="text-white hover:text-gray-400"
+              class="text-bg hover:text-gray-400"
             >
               <svg
                 width="25"
@@ -164,7 +164,7 @@
             <a
               href="https://github.com/DavidCouronne/"
               target="_blank"
-              class="text-white hover:text-gray-400"
+              class="text-bg hover:text-gray-400"
             >
               <svg
                 width="20"
@@ -184,7 +184,7 @@
             <a
               href="https://twitter.com/nollan94"
               target="_blank"
-              class="text-white hover:text-gray-400"
+              class="text-bg hover:text-gray-400"
             >
               <svg
                 width="20"
