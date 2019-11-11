@@ -1,9 +1,6 @@
 <template>
   <div class="relative">
-   
-
     <div class="relative w-80">
-      
       <div class="absolute top-0 ml-3" style="top:10px">
         <svg
           fill="currentColor"
@@ -27,7 +24,6 @@
         &times;
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -42,11 +38,8 @@
 <script>
 import axios from 'axios'
 
-
 export default {
-  components: {
-  
-  },
+  components: {},
   created() {
     axios(this.$static.metadata.pathPrefix + '/search.json')
       .then(response => {

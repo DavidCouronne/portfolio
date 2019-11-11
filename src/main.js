@@ -3,7 +3,6 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 
-
 import Vuetify from 'vuetify'
 import './assets/style/index.scss'
 
@@ -12,7 +11,6 @@ import { vuetifyConfig } from './vuetify.config.js'
 export default function(Vue, { head, appOptions }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-  
 
   const vuetifyOpts = vuetifyConfig()
 
