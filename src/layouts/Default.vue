@@ -63,6 +63,9 @@
         @click.stop="drawer = !drawer"
       />
       <v-toolbar-title>David Couronné</v-toolbar-title>
+     
+      <v-spacer />
+       <v-toolbar-items class="hidden-md-and-up">
       <v-btn
         dark
         icon
@@ -80,8 +83,8 @@
         to="/blogs"
       >
         <v-icon>mdi-school</v-icon>
-      </v-btn>
-      <v-spacer />
+      </v-btn></v-toolbar-items>
+      <v-toolbar-items class="hidden-sm-and-down">
       <v-btn :to="$url('/')">
           Home
         </v-btn>
@@ -91,7 +94,7 @@
         <v-btn :to="$url('/docs')">
          Documentation
         </v-btn>
-
+      </v-toolbar-items>
       <v-btn
         icon
         @click="goDark = !goDark"
