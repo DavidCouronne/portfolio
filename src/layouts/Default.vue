@@ -118,7 +118,7 @@
 export default {
   data () {
     return {
-      goDark: false,
+      goDark: true,
       scroll: 0,
       itemsExt: [
         {
