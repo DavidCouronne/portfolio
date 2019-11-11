@@ -2,23 +2,23 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from '~/layouts/Default.vue'
-import LandingLayout from '~/layouts/Landing.vue'
-import VueScrollTo from 'vue-scrollto'
-import VueFuse from 'vue-fuse'
 
-import './assets/style/index.css'
 
-export default function(Vue, { head }) {
+import Vuetify from 'vuetify'
+import './assets/style/index.scss'
+
+import { vuetifyConfig } from './vuetify.config.js'
+
+export default function(Vue, { head, appOptions }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-  Vue.component('Landing', LandingLayout)
+  
 
-  Vue.use(VueScrollTo, {
-    duration: 500,
-    easing: 'ease'
-  })
+  const vuetifyOpts = vuetifyConfig()
 
-  Vue.use(VueFuse)
+  Vue.use(Vuetify)
+
+  appOptions.vuetify = new Vuetify(vuetifyOpts)
 
   head.meta.push({
     name: 'keywords',

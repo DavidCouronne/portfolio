@@ -1,5 +1,2 @@
-/* purgecss start ignore */
-
-@import './code/_index.scss';
-
-/* purgecss end ignore */
+@import './imports';
+@import './code/';

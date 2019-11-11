@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <v-content>
     <div class="container-inner mx-auto py-16">
       <div
         v-for="post in $page.posts.edges"
@@ -36,6 +37,7 @@
         :currentPage="$page.posts.pageInfo.currentPage"
       />
     </div>
+    </v-content>
   </Layout>
 </template>
 
