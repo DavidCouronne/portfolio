@@ -3,9 +3,9 @@
     <svg
       v-if="show"
       class="go-to-top"
-      @click="scrollToTop"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 49.484 28.284"
+      @click="scrollToTop"
     >
       <g transform="translate(-229 -126.358)">
         <rect
@@ -28,48 +28,48 @@
 </template>
 
 <script>
-import debounce from 'lodash.debounce'
-export default {
-  props: {
-    threshold: {
-      type: Number,
-      default: 300
-    }
-  },
-  data() {
-    return {
-      scrollTop: null
-    }
-  },
-  mounted() {
-    this.scrollTop = this.getScrollTop()
-    window.addEventListener(
-      'scroll',
-      debounce(() => {
-        this.scrollTop = this.getScrollTop()
-      }, 100)
-    )
-  },
-  methods: {
-    getScrollTop() {
-      return (
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop ||
-        0
+  import debounce from 'lodash.debounce'
+  export default {
+    props: {
+      threshold: {
+        type: Number,
+        default: 300,
+      },
+    },
+    data () {
+      return {
+        scrollTop: null,
+      }
+    },
+    computed: {
+      show () {
+        return this.scrollTop > this.threshold
+      },
+    },
+    mounted () {
+      this.scrollTop = this.getScrollTop()
+      window.addEventListener(
+        'scroll',
+        debounce(() => {
+          this.scrollTop = this.getScrollTop()
+        }, 100),
       )
     },
-    scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      this.scrollTop = 0
-    }
-  },
-  computed: {
-    show() {
-      return this.scrollTop > this.threshold
-    }
+    methods: {
+      getScrollTop () {
+        return (
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop ||
+          0
+        )
+      },
+      scrollToTop () {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        this.scrollTop = 0
+      },
+    },
   }
-}
 </script>
 
 <style scoped>

@@ -19,19 +19,19 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      count: 0
-    }
-  },
-  methods: {
-    increment() {
-      this.count++
+  export default {
+    data () {
+      return {
+        count: 0,
+      }
     },
-    decrement() {
-      this.count--
-    }
+    methods: {
+      increment () {
+        this.count++
+      },
+      decrement () {
+        this.count--
+      },
+    },
   }
-}
 </script>

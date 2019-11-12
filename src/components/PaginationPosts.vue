@@ -5,22 +5,26 @@
       :class="{
         'text-gray-400 hover:text-gray-400 cursor-not-allowed': !showPreviousPage
       }"
-      >&larr; Prev</g-link
     >
-    <div class="text-base">Page {{ currentPage }} of {{ totalPages }}</div>
+      &larr; Prev
+    </g-link>
+    <div class="text-base">
+      Page {{ currentPage }} of {{ totalPages }}
+    </div>
     <g-link
       :to="nextPage"
       :class="{
         'text-gray-400 hover:text-gray-400 cursor-not-allowed': !showNextPage
       }"
-      >Next &rarr;</g-link
     >
+      Next &rarr;
+    </g-link>
   </div>
 </template>
 
 <script>
-export default {
-  props: ['base', 'totalPages', 'currentPage']
+  export default {
+    props: ['base', 'totalPages', 'currentPage'],
   /* computed: {
     showPreviousPage() {
       return this.currentPage !== 1
@@ -39,5 +43,5 @@ export default {
         : `${this.base}/${this.currentPage}`
     }
   } */
-}
+  }
 </script>

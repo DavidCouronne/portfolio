@@ -1,7 +1,11 @@
 <template>
   <Layout>
-    <SEOPage />
-    <v-sheet mx-auto py-0 py-md-6>
+    <s-e-o-page />
+    <v-sheet
+      mx-auto
+      py-0
+      py-md-6
+    >
       <div class="post__header">
         <v-img
           v-if="$page.post.cover_image"
@@ -55,12 +59,12 @@ query Post ($id: ID!) {
 </page-query>
 
 <script>
-import SEOPage from '../components/base/SEOArticle.vue'
-export default {
-  components: {
-    SEOPage
+  import SEOPage from '../components/base/SEOArticle.vue'
+  export default {
+    components: {
+      SEOPage,
+    },
   }
-}
 </script>
 
 <style src="../css/github-markdown.css" />

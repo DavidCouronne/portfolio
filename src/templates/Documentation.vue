@@ -22,13 +22,13 @@ query Documentation ($id: ID!) {
 </page-query>
 
 <script>
-export default {
-  metaInfo() {
-    return {
-      title: this.$page.documentation.title
-    }
+  export default {
+    metaInfo () {
+      return {
+        title: this.$page.documentation.title,
+      }
+    },
   }
-}
 </script>
 
 <style src="../css/github-markdown.css" />
