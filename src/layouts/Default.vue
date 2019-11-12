@@ -57,7 +57,7 @@
       color="black"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>David Couronné {{ theme }}</v-toolbar-title>
+      <v-toolbar-title>David Couronné</v-toolbar-title>
 
       <v-spacer />
 

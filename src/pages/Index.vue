@@ -2,22 +2,24 @@
   <Layout>
     <v-content>
       <!-- Home Parallax -->
-      <v-card>
+      <v-card dark >
         <v-img
           src="https://res.cloudinary.com/dpw19qolx/image/upload/v1573405573/art-dark-dawn.jpg"
-          height="600"
+          height="100vh" 
         >
-          <v-row
-            column
-            align="center"
-            justify="center"
-            class="white--text fill-height"
-          >
+          <v-layout
+        column
+        align-center
+        justify-center
+        class="white--text"
+        fill-height
+      >
             <img
               src="https://res.cloudinary.com/dpw19qolx/image/upload/v1573406011/dessin.svg"
               height="150px"
               alt="Dinosaure"
-            >
+              
+            />
 
             <h1 class="white--text mb-2 display-3 text-center">
               Web Developper
@@ -29,7 +31,8 @@
             </div>
 
             <v-btn
-              class="mt-5"
+            
+              
               dark
               large
               outlined
@@ -38,7 +41,7 @@
             >
               Read Me
             </v-btn>
-          </v-row>
+          </v-layout>
         </v-img>
       </v-card>
 
