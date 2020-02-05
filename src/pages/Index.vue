@@ -54,7 +54,7 @@
             cols="12"
             class="midContainer"
           >
-            <v-container >
+            <v-container>
               <v-row align="center">
                 <v-col
                   cols="12"
