@@ -1,5 +1,6 @@
 ---
 title: gridsome plugin prismj all documentation
+excerpt: a minimal documentation for gridsome plugin prismj all
 ---
 
 
