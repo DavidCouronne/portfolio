@@ -9,8 +9,12 @@
           ></g-image>
         </div>
         <div class="w-full md:w-5/6 text-center md:text-left md:pl-8 lg:pl-0">
-          <h1 class="pb-0 mb-0 mt-0 text-4xl font-medium">{{ $page.author.name }}</h1>
-          <p class="text-gray-700 text-xl" v-if="$page.author.bio">{{ $page.author.bio }}</p>
+          <h1 class="pb-0 mb-0 mt-0 text-4xl font-medium">
+            {{ $page.author.name }}
+          </h1>
+          <p class="text-gray-700 text-xl" v-if="$page.author.bio">
+            {{ $page.author.bio }}
+          </p>
           <div class="author-social">
             {{ $page.author.belongsTo.totalCount }} {{ postLabel }}
             &nbsp;&middot;&nbsp;
@@ -112,8 +116,8 @@
 </page-query>
 
 <script>
-import PostListItem from "~/components/PostListItem.vue";
-import Pagination from "~/components/Pagination.vue";
+import PostListItem from '~/components/PostListItem.vue'
+import Pagination from '~/components/Pagination.vue'
 
 export default {
   components: {
@@ -122,14 +126,14 @@ export default {
   },
   computed: {
     postLabel: function() {
-      var pluralize = require("pluralize");
-      return pluralize("post", this.$page.author.belongsTo.totalCount);
+      var pluralize = require('pluralize')
+      return pluralize('post', this.$page.author.belongsTo.totalCount)
     }
   },
   metaInfo() {
     return {
       title: this.$page.author.name
-    };
+    }
   }
-};
+}
 </script>

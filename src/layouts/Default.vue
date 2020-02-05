@@ -1,9 +1,9 @@
 <template>
   <div id="app" dark>
-    <HeaderPartial v-if="hideHeader!=true"></HeaderPartial>
-    
-    <slot/>
-    <NavbarPartial :disableScroll="disableScroll" ></NavbarPartial>
+    <HeaderPartial v-if="hideHeader != true"></HeaderPartial>
+
+    <slot />
+    <NavbarPartial :disableScroll="disableScroll"></NavbarPartial>
     <FooterPartial></FooterPartial>
   </div>
 </template>
@@ -37,10 +37,10 @@ export default {
     NavbarPartial,
     FooterPartial
   },
-  
+
   metaInfo: {
     bodyAttrs: {
-      class: "m-0"
+      class: 'm-0'
     }
   }
 }

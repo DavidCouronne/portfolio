@@ -5,41 +5,41 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "David Couronné",
-  siteDescription: "Welcome to my Blog",
-  siteUrl: "http://localhost:8080",
+  siteName: 'David Couronné',
+  siteDescription: 'Welcome to my Blog',
+  siteUrl: 'http://localhost:8080',
   plugins: [
     {
-      use: "gridsome-plugin-pwa",
+      use: 'gridsome-plugin-pwa',
       options: {
-        title: "Gridsome",
-        startUrl: "/",
-        display: "standalone",
-        statusBarStyle: "default",
-        manifestPath: "manifest.json",
+        title: 'Gridsome',
+        startUrl: '/',
+        display: 'standalone',
+        statusBarStyle: 'default',
+        manifestPath: 'manifest.json',
         disableServiceWorker: false,
-        serviceWorkerPath: "service-worker.js",
-        cachedFileTypes: "js,json,css,html,png,jpg,jpeg,svg",
-        shortName: "Gridsome",
-        themeColor: "#666600",
-        backgroundColor: "#ffffff",
-        icon: "src/favicon.ico", // must be provided like 'src/favicon.png'
-        msTileImage: "",
-        msTileColor: "#666600"
+        serviceWorkerPath: 'service-worker.js',
+        cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
+        shortName: 'Gridsome',
+        themeColor: '#666600',
+        backgroundColor: '#ffffff',
+        icon: 'src/favicon.ico', // must be provided like 'src/favicon.png'
+        msTileImage: '',
+        msTileColor: '#666600'
       }
     },
     {
-      use: "gridsome-plugin-tailwindcss",
+      use: 'gridsome-plugin-tailwindcss',
       options: {
-        tailwindConfig: "./tailwind.config.js",
+        tailwindConfig: './tailwind.config.js',
         purgeConfig: {
           whitelist: [
-            "svg-inline--fa",
-            "table",
-            "table-striped",
-            "table-bordered",
-            "table-hover",
-            "table-sm"
+            'svg-inline--fa',
+            'table',
+            'table-striped',
+            'table-bordered',
+            'table-hover',
+            'table-sm'
           ],
           whitelistPatterns: [
             /fa-$/,
@@ -58,31 +58,31 @@ module.exports = {
       }
     },
     {
-      use: "gridsome-source-static-meta",
+      use: 'gridsome-source-static-meta',
       options: {
-        path: "content/site/*.json"
+        path: 'content/site/*.json'
       }
     },
     {
-      use: "@gridsome/source-filesystem",
+      use: '@gridsome/source-filesystem',
       options: {
-        typeName: "Author",
-        path: "./content/author/*.md"
+        typeName: 'Author',
+        path: './content/author/*.md'
       }
     },
     {
-      use: "@gridsome/source-filesystem",
+      use: '@gridsome/source-filesystem',
       options: {
-        typeName: "Blog",
-        path: "./content/blog/**/*.md",
+        typeName: 'Blog',
+        path: './content/blog/**/*.md',
         refs: {
-          author: "Author",
+          author: 'Author',
           tags: {
-            typeName: "Tag",
+            typeName: 'Tag',
             create: true
           },
           category: {
-            typeName: "Category",
+            typeName: 'Category',
             create: true
           }
         }
@@ -93,7 +93,7 @@ module.exports = {
     remark: {
       plugins: [
         [
-          "gridsome-plugin-remark-prismjs-all",
+          'gridsome-plugin-remark-prismjs-all',
           {
             aliases: {
               dosini: `ini`,
@@ -110,13 +110,13 @@ module.exports = {
             }
           }
         ],
-        "@noxify/gridsome-remark-table-align",
+        '@noxify/gridsome-remark-table-align',
         [
-          "@noxify/gridsome-remark-classes",
+          '@noxify/gridsome-remark-classes',
           {
-            table: "table table-striped",
-            "tableCell[align=center]": "text-center",
-            "tableCell[align=right]": "text-right"
+            table: 'table table-striped',
+            'tableCell[align=center]': 'text-center',
+            'tableCell[align=right]': 'text-right'
           }
         ]
       ]
@@ -125,26 +125,26 @@ module.exports = {
   templates: {
     Blog: [
       {
-        path: "/blog/:title"
+        path: '/blog/:title'
       }
     ],
     Category: [
       {
-        path: "/category/:title",
-        component: "~/templates/Category.vue"
+        path: '/category/:title',
+        component: '~/templates/Category.vue'
       }
     ],
     Author: [
       {
-        path: "/author/:name",
-        component: "~/templates/Author.vue"
+        path: '/author/:name',
+        component: '~/templates/Author.vue'
       }
     ],
     Tag: [
       {
-        path: "/tags/:title",
-        component: "~/templates/Tag.vue"
+        path: '/tags/:title',
+        component: '~/templates/Tag.vue'
       }
     ]
   }
-};
+}

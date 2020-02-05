@@ -5,9 +5,9 @@
         <h1 class="pb-0 mb-0 text-5xl font-medium">{{ $page.tag.title }}</h1>
         <p class="text-gray-700 text-xl">
           A collection of
-          <span
-            class="self-center"
-          >{{ $page.tag.belongsTo.totalCount }} {{ postLabel }}</span>
+          <span class="self-center"
+            >{{ $page.tag.belongsTo.totalCount }} {{ postLabel }}</span
+          >
         </p>
       </div>
 
@@ -74,8 +74,8 @@
 </page-query>
 
 <script>
-import PostListItem from "~/components/PostListItem.vue";
-import Pagination from "~/components/Pagination.vue";
+import PostListItem from '~/components/PostListItem.vue'
+import Pagination from '~/components/Pagination.vue'
 
 export default {
   components: {
@@ -84,14 +84,14 @@ export default {
   },
   computed: {
     postLabel: function() {
-      var pluralize = require("pluralize");
-      return pluralize("post", this.$page.tag.belongsTo.totalCount);
+      var pluralize = require('pluralize')
+      return pluralize('post', this.$page.tag.belongsTo.totalCount)
     }
   },
   metaInfo() {
     return {
       title: this.$page.tag.title
-    };
+    }
   }
-};
+}
 </script>

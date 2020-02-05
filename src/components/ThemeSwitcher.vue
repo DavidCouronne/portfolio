@@ -1,12 +1,22 @@
 <template>
-  <a role="button" @click.prevent="toggleTheme()"  
-      :aria-label="'Toggle ' + nextTheme" 
-      :title="'Toggle ' + nextTheme"
-      class="toggle-theme"
-    >
+  <a
+    role="button"
+    @click.prevent="toggleTheme()"
+    :aria-label="'Toggle ' + nextTheme"
+    :title="'Toggle ' + nextTheme"
+    class="toggle-theme"
+  >
     i
-    <font-awesome :icon="['fas', 'sun']" class="mr-3" v-if="theme === 'dark'"></font-awesome>
-    <font-awesome :icon="['fas', 'moon']" class="mr-3" v-if="theme === 'light'"></font-awesome>
+    <font-awesome
+      :icon="['fas', 'sun']"
+      class="mr-3"
+      v-if="theme === 'dark'"
+    ></font-awesome>
+    <font-awesome
+      :icon="['fas', 'moon']"
+      class="mr-3"
+      v-if="theme === 'light'"
+    ></font-awesome>
   </a>
 </template>
 
@@ -16,7 +26,7 @@ let themes = ['light', 'dark']
 export default {
   data() {
     return {
-      theme: 'light',
+      theme: 'light'
     }
   },
   computed: {
@@ -28,8 +38,8 @@ export default {
   },
   methods: {
     toggleTheme() {
-      const currentIndex = themes.indexOf(this.theme);
-      const nextIndex = (currentIndex + 1) % themes.length;
+      const currentIndex = themes.indexOf(this.theme)
+      const nextIndex = (currentIndex + 1) % themes.length
       window.__setPreferredTheme(themes[nextIndex])
       this.theme = themes[nextIndex]
     }
