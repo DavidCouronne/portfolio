@@ -4,16 +4,13 @@ module.exports = {
     node: true
   },
   extends: [
-    
-    'vuetify'
+    'plugin:vue/essential',
+    'plugin:prettier/recommended',
+    '@vue/prettier'
   ],
-  
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'vuetify/no-deprecated-classes': 'error',
-    'vuetify/grid-unknown-attributes': 'error',
-'vuetify/no-legacy-grid': 'error',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   },
   parserOptions: {
     parser: 'babel-eslint'

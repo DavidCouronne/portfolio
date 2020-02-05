@@ -1,94 +1,97 @@
 <template>
-  <Layout>
-    <div class="container-inner mx-auto my-16">
-      <h2 class="text-4xl font-bold mb-8 border-b">
-        Tag: {{ $page.tag.title }}
-      </h2>
-
-      <div
-        v-for="post in $page.tag.belongsTo.edges"
-        :key="post.node.id"
-        class="post border-gray-400 border-b mb-12"
-      >
-        <h2 class="text-3xl font-bold">
-          <g-link
-            :to="post.node.path"
-            class="text-copy-primary"
+  <Layout :hideHeader="true" :disableScroll="true">
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden pt-24">
+      <div class="mx-4 sm:mx-0">
+        <h1 class="pb-0 mb-0 text-5xl font-medium">{{ $page.tag.title }}</h1>
+        <p class="text-gray-700 text-xl">
+          A collection of
+          <span class="self-center"
+            >{{ $page.tag.belongsTo.totalCount }} {{ postLabel }}</span
           >
-            {{
-              post.node.title
-            }}
-          </g-link>
-        </h2>
-        <div class="text-copy-secondary mb-4">
-          <span>{{ post.node.date }}</span>
-          <span>&middot;</span>
-          <span>{{ post.node.timeToRead }} min read</span>
-        </div>
-
-        <div class="text-lg mb-4">
-          {{ post.node.summary }}
-        </div>
-
-        <div class="mb-8">
-          <g-link
-            :to="post.node.path"
-            class="font-bold uppercase"
-          >
-            Read More
-          </g-link>
-        </div>
+        </p>
       </div>
 
-      <pagination-posts
-        v-if="$page.tag.belongsTo.pageInfo.totalPages > 1"
-        :base="`/tag/${$page.tag.title}`"
-        :total-pages="$page.tag.belongsTo.pageInfo.totalPages"
-        :current-page="$page.tag.belongsTo.pageInfo.currentPage"
-      />
+      <div class="pt-8 border-b"></div>
+
+      <div class="flex flex-wrap pt-8 pb-8 mx-4 sm:-mx-4">
+        <PostListItem
+          v-for="edge in $page.tag.belongsTo.edges"
+          :key="edge.node.id"
+          :record="edge.node"
+        />
+      </div>
+
+      <div class="pagination flex justify-center mb-8">
+        <Pagination
+          :baseUrl="$page.tag.path"
+          :currentPage="$page.tag.belongsTo.pageInfo.currentPage"
+          :totalPages="$page.tag.belongsTo.pageInfo.totalPages"
+          :maxVisibleButtons="5"
+          v-if="$page.tag.belongsTo.pageInfo.totalPages > 1"
+        />
+      </div>
     </div>
   </Layout>
 </template>
 
 <page-query>
-query Tag ($id: ID!, $page: Int) {
-  tag: tag (id: $id) {
-    title
-    belongsTo (page: $page, perPage: 3) @paginate {
-      totalCount
-      pageInfo {
-        totalPages
-        currentPage
-      }
-      edges {
-        node {
-          ...on Post {
-            title
-            date (format: "MMMM D, YYYY")
-            path
-            summary
-            tags {
+  query($id: ID!, $page:Int) {
+    tag(id: $id) {
+      title
+      path
+      belongsTo(perPage: 5, page: $page) @paginate {
+        totalCount
+        pageInfo {
+          totalPages
+          currentPage
+        }
+        edges {
+          node {
+            ... on Blog {
               title
+              description
+              cover_image
+              path
+              timeToRead
+              humanTime : date(format:"DD MMM YYYY")
+              datetime : date
+              category {
+                id
+                title
+              }
+              author {
+                id
+                name
+                image(width:64, height:64, fit:inside)
+                path
+              }
             }
           }
         }
       }
-    }
+    }  
   }
-}
 </page-query>
 
 <script>
-  import PaginationPosts from '../components/PaginationPosts'
+import PostListItem from '~/components/PostListItem.vue'
+import Pagination from '~/components/Pagination.vue'
 
-  export default {
-    metaInfo () {
-      return {
-        title: 'Tag: ' + this.$page.tag.title,
-      }
-    },
-    components: {
-      PaginationPosts,
-    },
+export default {
+  components: {
+    Pagination,
+    PostListItem
+  },
+  computed: {
+    postLabel: function() {
+      var pluralize = require('pluralize')
+      return pluralize('post', this.$page.tag.belongsTo.totalCount)
+    }
+  },
+  metaInfo() {
+    return {
+      title: this.$page.tag.title
+    }
   }
+}
 </script>

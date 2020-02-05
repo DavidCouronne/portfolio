@@ -1,217 +1,76 @@
 <template>
   <Layout>
-    <v-content>
-      <!-- Home Parallax -->
-      <v-card dark>
-        <v-img
-          src="https://res.cloudinary.com/dpw19qolx/image/upload/v1573405573/art-dark-dawn.jpg"
-          height="100vh"
-          class="align-center"
-        >
-          <v-card-text
-            class=" fill-height"
-            align="center"
-            justify="center"
-          >
-            <div>
-              <img
-                src="https://res.cloudinary.com/dpw19qolx/image/upload/v1573406011/dessin.svg"
-                height="150px"
-                alt="Dinosaure"
-              >
-            </div>
-            <h1 class="white--text mb-2 display-3 text-center">
-              Web Developper
-            </h1>
-            <div
-              class="subheading mb-3 text-center shadow white--text"
-            >
-              Mathematics Teacher in professionnal reconversion
-            </div>
-
-            <v-btn
-              dark
-              large
-              outlined
-              rounded
-              href="/blog"
-            >
-              Read Me
-            </v-btn>
-          </v-card-text>
-        </v-img>
-      </v-card>
-
-      <!-- Home parallax -->
-      <!-- features -->
-      <section>
-        <v-row
-
-          class="my-5"
-          align="center"
-        >
-          <v-col
-            cols="12"
-            class="midContainer"
-          >
-            <v-container>
-              <v-row align="center">
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-center">
-                      <img
-                        src="@/assets/img/logo.png"
-                        width="40"
-                        height="40"
-                      >
-                    </v-card-text>
-                    <v-card-title
-                      primary-title
-                      class="layout justify-center"
-                    >
-                      <div class="headline text-center">
-                        Gridsome
-                      </div>
-                    </v-card-title>
-                    <v-card-text>
-                      Gridsome is a Vue-powered static site generator for
-                      building CDN-ready websites for any headless CMS, local
-                      files or APIs.
-                      <v-card-text class="text-center">
-                        <v-btn
-                          outlined
-                          rounded
-                          color="success"
-                          href="https://gridsome.org/"
-                          target="_blank"
-                        >
-                          Gridsome
-                        </v-btn>
-                      </v-card-text>
-                    </v-card-text>
-                  </v-card>
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-center">
-                      <img
-                        src="@/assets/img/vuetify-logo.svg"
-                        width="40"
-                        height="40"
-                      >
-                    </v-card-text>
-                    <v-card-title
-                      primary-title
-                      class="layout justify-center"
-                    >
-                      <div class="headline">
-                        Vuetify
-                      </div>
-                    </v-card-title>
-                    <v-card-text>
-                      Semantic Material Components Be prepared for an armada of
-                      specialized components at your disposal. With over 80 in
-                      total, there is a solution for any application.
-                      <v-card-text class="text-center">
-                        <v-btn
-                          outlined
-                          rounded
-                          color="info"
-                          href="https://vuetifyjs.com/en/"
-                          target="_blank"
-                        >
-                          Vuetify
-                        </v-btn>
-                      </v-card-text>
-                    </v-card-text>
-                  </v-card>
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-center">
-                      <img
-                        src="@/assets/img/contentful-logo.svg"
-                        width="40"
-                        height="40"
-                      >
-                    </v-card-text>
-                    <v-card-title
-                      primary-title
-                      class="layout justify-center"
-                    >
-                      <div class="headline">
-                        Contentful
-                      </div>
-                    </v-card-title>
-                    <v-card-text>
-                      Contentful provides a content infrastructure that enables
-                      teams to power content in any digital product. gridsome +
-                      contentful have no harzzel on server content now. Fast.
-                      Flexible. Future-proof.
-                      <v-card-text class="text-center">
-                        <v-btn
-                          outlined
-                          rounded
-                          color="error"
-                          href="https://www.contentful.com/developers/docs/javascript/tutorials/integrate-contentful-with-vue-and-nuxt/"
-                          target="_blank"
-                        >
-                          Contentful
-                        </v-btn>
-                      </v-card-text>
-                    </v-card-text>
-                  </v-card>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-col>
-        </v-row>
-      </section>
-      <!-- end features -->
-    </v-content>
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
+      <div class="flex flex-wrap with-large pt-16 pb-16 mx-4 sm:-mx-4">
+        <PostListItem
+          v-for="edge in $page.entries.edges"
+          :key="edge.node.id"
+          :record="edge.node"
+        />
+      </div>
+      <div class="pagination flex justify-center mb-8">
+        <Pagination
+          baseUrl=""
+          :currentPage="$page.entries.pageInfo.currentPage"
+          :totalPages="$page.entries.pageInfo.totalPages"
+          :maxVisibleButtons="5"
+          v-if="$page.entries.pageInfo.totalPages > 1"
+        />
+      </div>
+    </div>
   </Layout>
 </template>
 
-<script>
-  export default {
-    data () {
-      return {
-        goDark: false,
-        scroll: 0,
-        itemsExt: [
-          {
-            faIcon: 'github',
-            title: 'Kelvin Git',
-            to: 'https://github.com/kelvin2go',
-            target: '_blank',
-          },
-        ],
-        activenav: 'secundary',
-        color: 'secondary',
-        clipped: true,
-        drawer: false,
-        fixed: true,
-        isSidebarOpen: false,
-        miniVariant: false,
-        right: true,
-        rightDrawer: false,
-        title: 'AcadeTech',
-        items: [
-          { icon: 'mdi-home', title: 'Accueil', to: '/' },
-          { icon: 'mdi-school', title: 'Blogs', to: '/blogs' },
-        /* { icon: 'computer', title: 'Développement', to: '/dev' },
-        { icon: 'computer', title: 'Cover', to: '/cover' } */
-        ],
+<page-query>
+
+query($page:Int) {
+
+  entries: allBlog(perPage: 9, page: $page, sortBy: "date") @paginate {
+    totalCount
+    
+    pageInfo {
+      totalPages
+      currentPage
+     
+    }
+    edges {
+      node {
+        title
+        description
+        cover_image
+        path
+        timeToRead
+        humanTime : date(format:"DD MMM YYYY")
+        date (format: "D. MMMM YYYY")
+        
+        category {
+          id
+          title
+        }
+        author {
+          id
+          name
+          image(width:64, height:64, fit:inside)
+          path
+        }
       }
-    },
+    }
   }
+}
+
+</page-query>
+
+<script>
+import PostListItem from '~/components/PostListItem.vue'
+import Pagination from '~/components/Pagination.vue'
+
+export default {
+  metaInfo: {
+    title: 'Hello, world!'
+  },
+  components: {
+    Pagination,
+    PostListItem
+  }
+}
 </script>
