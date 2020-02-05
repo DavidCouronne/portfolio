@@ -31,7 +31,7 @@ const lablesStyles = lables
         ${color && `color: ${color};`}
       }`,
   )
-  .join(`\n`)
+  .join('\n')
 
 injectGlobal`
 

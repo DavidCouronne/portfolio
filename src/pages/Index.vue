@@ -2,37 +2,34 @@
   <Layout>
     <v-content>
       <!-- Home Parallax -->
-      <v-card dark >
+      <v-card dark>
         <v-img
           src="https://res.cloudinary.com/dpw19qolx/image/upload/v1573405573/art-dark-dawn.jpg"
-          height="100vh" 
+          height="100vh"
+          class="align-center"
         >
-          <v-layout
-        column
-        align-center
-        justify-center
-        class="white--text"
-        fill-height
-      >
-            <img
-              src="https://res.cloudinary.com/dpw19qolx/image/upload/v1573406011/dessin.svg"
-              height="150px"
-              alt="Dinosaure"
-              
-            />
-
+          <v-card-text
+            class=" fill-height"
+            align="center"
+            justify="center"
+          >
+            <div>
+              <img
+                src="https://res.cloudinary.com/dpw19qolx/image/upload/v1573406011/dessin.svg"
+                height="150px"
+                alt="Dinosaure"
+              >
+            </div>
             <h1 class="white--text mb-2 display-3 text-center">
               Web Developper
             </h1>
             <div
-              class="subheading mb-3 text-center shadow"
+              class="subheading mb-3 text-center shadow white--text"
             >
               Mathematics Teacher in professionnal reconversion
             </div>
 
             <v-btn
-            
-              
               dark
               large
               outlined
@@ -41,7 +38,7 @@
             >
               Read Me
             </v-btn>
-          </v-layout>
+          </v-card-text>
         </v-img>
       </v-card>
 
@@ -49,7 +46,7 @@
       <!-- features -->
       <section>
         <v-row
-          column
+
           class="my-5"
           align="center"
         >
@@ -57,7 +54,7 @@
             cols="12"
             class="midContainer"
           >
-            <v-container grid-list-xl>
+            <v-container >
               <v-row align="center">
                 <v-col
                   cols="12"

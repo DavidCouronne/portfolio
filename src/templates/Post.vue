@@ -1,30 +1,44 @@
 <template>
   <Layout>
-    <s-e-o-page />
-    <v-sheet
-      mx-auto
-      py-0
-      py-md-6
-    >
-      <div class="post__header">
-        <v-img
-          v-if="$page.post.cover_image"
-          alt="Cover image"
-          :aspect-ratio="16 / 9"
-          :src="$page.post.cover_image"
-        />
-      </div>
+    <v-content>
+      <v-container fluid>
+        <v-row>
+          <v-col
+            lg="8"
+            offset-lg="2"
+            xl="1"
+            offset-xl="2"
+            class="pa-6"
+          >
+            <s-e-o-page />
+            <v-sheet
+              mx-auto
+              py-0
+              py-md-6
+            >
+              <div class="post__header">
+                <v-img
+                  v-if="$page.post.cover_image"
+                  alt="Cover image"
+                  :aspect-ratio="16 / 9"
+                  :src="$page.post.cover_image"
+                />
+              </div>
 
-      <h1>{{ $page.post.title }}</h1>
-      <p>Posted {{ $page.post.date }}.</p>
-      <v-container>
-        <div v-html="$page.post.content" />
+              <h1>{{ $page.post.title }}</h1>
+              <p>Posted {{ $page.post.date }}.</p>
+              <v-container>
+                <div v-html="$page.post.content" />
+              </v-container>
+
+              <div class="post__footer">
+                <post-tags :post="$page.post" />
+              </div>
+            </v-sheet>
+          </v-col>
+        </v-row>
       </v-container>
-
-      <div class="post__footer">
-        <post-tags :post="$page.post" />
-      </div>
-    </v-sheet>
+    </v-content>
   </Layout>
 </template>
 

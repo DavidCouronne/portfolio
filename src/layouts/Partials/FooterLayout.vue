@@ -1,17 +1,19 @@
 <template>
   <v-footer
-    dark
+
     padless
   >
     <v-card
       class="flex"
       flat
       tile
-      color="#121212"
     >
       <v-list>
         <v-list-item>
-          <g-link to="/Legacy">
+          <g-link
+            class="footer-link"
+            to="/Legacy"
+          >
             Legacy
           </g-link>
           <v-spacer />
@@ -19,7 +21,7 @@
           <v-btn
             href="https://twitter.com/nollan94"
             class="mx-4"
-            dark
+
             icon
             title="twitter"
           >
@@ -30,7 +32,7 @@
           <v-btn
             href="https://github.com/DavidCouronne"
             class="mx-4"
-            dark
+
             icon
             title="github"
           >
@@ -40,7 +42,7 @@
           </v-btn>
         </v-list-item>
       </v-list>
-      <v-card-text class="py-2 white--text text-center">
+      <v-card-text class="py-2  text-center">
         {{ new Date().getFullYear() }} —
         <strong>David Couronné</strong>
       </v-card-text>
