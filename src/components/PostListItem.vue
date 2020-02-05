@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-post px-0 sm:px-4 pb-8 mb-8" v-bind:class="{'no-border': !border}">
     <g-link :to="record.path" class="post-card-image-link">
-      <g-image :src="record.image" :alt="record.title" class="post-card-image"></g-image>
+      <g-image :src="record.cover_image" :alt="record.title" class="post-card-image"></g-image>
     </g-link>
     <div class="post-card-content">
       <g-link :to="record.path">

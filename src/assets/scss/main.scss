@@ -180,4 +180,5 @@ body[data-theme="dark"] {
 }
 
 
-@import "./themes/night-owl.scss";
+//@import "./themes/night-owl.scss";
+@import "~gridsome-plugin-remark-prismjs-all/themes/night-owl.scss";

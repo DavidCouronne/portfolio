@@ -50,7 +50,7 @@
             ... on Blog {
               title
               description
-              image
+              cover_image
               path
               timeToRead
               humanTime : date(format:"DD MMM YYYY")

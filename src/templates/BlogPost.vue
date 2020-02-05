@@ -47,7 +47,7 @@
         </section>
       </div>
       <section class="post-image mx-auto max-w-2xl">
-        <g-image class=" rounded" :src="$page.blog.image"></g-image>
+        <g-image class=" rounded" :src="$page.blog.cover_image"></g-image>
       </section>
 
       <div class="lg:mx-32 md:mx-16 px-4 sm:px-0">
@@ -82,8 +82,8 @@
     blog(id: $id) {
       title
       path
-      image
-      image_caption
+      cover_image
+      cover_image_caption
       description
       content
       humanTime : date(format:"DD MMMM YYYY")
@@ -126,7 +126,7 @@
     previous: blog(id: $previousElement) {
       title
       description
-      image
+      cover_image
       path
       timeToRead
       category {
@@ -144,7 +144,7 @@
     next: blog(id: $nextElement) {
       title
       description
-      image
+      cover_image
       path
       timeToRead
       category {
@@ -185,7 +185,7 @@ export default {
         },
         {
           name: "twitter:card",
-          content: this.$page.blog.image ? "summary_large_image" : "summary",
+          content: this.$page.blog.cover_image ? "summary_large_image" : "summary",
         },
         {
           name: "twitter:creator",
@@ -197,7 +197,7 @@ export default {
         },
         {
           property: "og:image",
-          content: this.$page.blog.image || ""
+          content: this.$page.blog.cover_image || ""
         }
       ]
     };

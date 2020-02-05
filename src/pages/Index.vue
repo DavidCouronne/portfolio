@@ -33,7 +33,7 @@ query($page:Int) {
       node {
         title
         description
-        image
+        cover_image
         path
         timeToRead
         humanTime : date(format:"DD MMM YYYY")

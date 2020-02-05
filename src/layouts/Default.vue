@@ -1,7 +1,7 @@
 <template>
   <div id="app" dark>
     <HeaderPartial v-if="hideHeader!=true"></HeaderPartial>
-    <div>hop</div>
+    
     <slot/>
     <NavbarPartial :disableScroll="disableScroll" ></NavbarPartial>
     <FooterPartial></FooterPartial>

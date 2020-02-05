@@ -3,11 +3,11 @@ title: "Gridsome et Tailwind CSS sans plugin !"
 date: 2019-11-01
 published: true
 author: author1
-category: Digital
+category: dev
 tags: Gridsome, TailwindCSS
 canonical_url: false
 description: "Installer Tailwind CSS avec Gridsome sans utiliser de plugin."
-image: https://res.cloudinary.com/dpw19qolx/image/upload/t_cover-image/v1561523334/St_Michael_27s_Mount_II5302_x_2982.jpg
+cover_image: https://res.cloudinary.com/dpw19qolx/image/upload/t_cover-image/v1561523334/St_Michael_27s_Mount_II5302_x_2982.jpg
 ---
 
 Dans cet article, nous allons juste aborder l'installation et la configuration de tailwindcss dans un projet Gridsome.

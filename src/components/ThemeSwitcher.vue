@@ -4,7 +4,7 @@
       :title="'Toggle ' + nextTheme"
       class="toggle-theme"
     >
-    
+    i
     <font-awesome :icon="['fas', 'sun']" class="mr-3" v-if="theme === 'dark'"></font-awesome>
     <font-awesome :icon="['fas', 'moon']" class="mr-3" v-if="theme === 'light'"></font-awesome>
   </a>

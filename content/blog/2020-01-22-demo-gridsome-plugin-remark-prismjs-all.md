@@ -1,14 +1,14 @@
 ---
-title: Sample Katex
+title: Demo gridsome-plugin-remark-prismjs-all
 date: 2020-01-22
 published: true
-tags: Python, Tutorial
+tags: Gridsome, Tutorial
 series: false
 canonical_url: false
-description: "Sample Katex"
-category: Getting started
-image: https://github.com/DavidCouronne/gridsome-plugin-remark-prismjs-all/blob/master/snapshots/snapshot-night-owl.png?raw=true
-image_caption: Photo by Josh Spires on Unsplash
+description: "Demo file for syntax highlighting"
+category: dev
+cover_image: https://res.cloudinary.com/dpw19qolx/image/upload/t_cover-image/v1561731158/shahadat-shemul-gnyA8vd3Otc-unsplash.jpg
+cover_image_caption: Photo by Shahadat Shemul on Unsplash
 author: author1
 ---
 ## Basic usage
@@ -185,17 +185,7 @@ Result
 ```
 
 
-## Prompt
 
-``````md
-```bash{promptUser: "John Snow"}{promptHost: "The Wall"}
-yarn build
-```
-``````
-
-```bash{promptUser: "John Snow"}{promptHost: "The Wall"}
-yarn build
-```
 
 ## Options
 
