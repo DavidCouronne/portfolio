@@ -17,9 +17,9 @@ query {
 </static-query>
 
 <script>
-import HeaderPartial from '~/layouts/partials/HeaderWithNavbar.vue'
-import NavbarPartial from '~/layouts/partials/Navbar.vue'
-import FooterPartial from '~/layouts/partials/Footer.vue'
+import HeaderPartial from '@/layouts/partials/HeaderWithNavbar.vue'
+import NavbarPartial from '@/layouts/partials/Navbar.vue'
+import FooterPartial from '@/layouts/partials/Footer.vue'
 
 export default {
   props: {
