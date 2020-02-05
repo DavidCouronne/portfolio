@@ -6,7 +6,6 @@
     :title="'Toggle ' + nextTheme"
     class="toggle-theme"
   >
-    i
     <font-awesome
       :icon="['fas', 'sun']"
       class="mr-3"

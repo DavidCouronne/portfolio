@@ -26,9 +26,9 @@
                 class="animated-link"
                 >{{ element.name }}</a
               >
-              <g-link v-else :to="element.link" class="animated-link">{{
-                element.name
-              }}</g-link>
+              <g-link v-else :to="element.link" class="animated-link">
+                {{ element.name }}
+              </g-link>
             </li>
           </ul>
         </div>

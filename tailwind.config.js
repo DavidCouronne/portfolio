@@ -156,9 +156,6 @@ module.exports = {
           marginBottom: config('theme.margin.4')
         }
       })
-    },
-    require('tailwindcss-tables')(),
-    // require('tailwindcss-gradients')(),
-    require('tailwindcss-transitions')()
+    }
   ]
 }

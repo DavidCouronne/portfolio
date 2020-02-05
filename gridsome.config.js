@@ -7,8 +7,14 @@
 module.exports = {
   siteName: 'David Couronné',
   siteDescription: 'Welcome to my Blog',
-  siteUrl: 'http://localhost:8080',
+  siteUrl: 'https://davidcouronne.netlify.com/',
   plugins: [
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        cacheTime: 600000 // default
+      }
+    },
     {
       use: 'gridsome-plugin-pwa',
       options: {
