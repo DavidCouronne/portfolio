@@ -27,7 +27,7 @@ const myvar = "some value";
 
 To add a title your code, you can use the `codeTitle` option:
 
-``````md
+``````md{codeTitle: "markdown"}
 ```js{codeTitle: "In src/main.js"}
 require("prismjs/themes/prism-solarizedlight.css")
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")
@@ -47,7 +47,7 @@ require("prismjs/plugins/command-line/prism-command-line.css")
 
 To see the line numbers alongside your code, you can use the `numberLines` option:
 
-`````md
+`````md{codeTitle: "markdown"}
 ```html{numberLines: true}
 <template>
   <Layout>
@@ -80,7 +80,7 @@ Result:
 You can also start numbering at any index you wish (here, numbering
 will start at index 21):
 
-`````md
+`````md{codeTitle: "markdown"}
 ```html{numberLines: 21}
 <template>
   <Layout>
@@ -120,7 +120,7 @@ In the following code snippet, lines 3 and 5 through 7 will get the line
 highlighting. The line range parsing is done with
 [https://www.npmjs.com/package/parse-numeric-range](https://www.npmjs.com/package/parse-numeric-range).
 
-`````md
+`````md{codeTitle: "markdown"}
 ```html{3,5-7}
 <template>
   <Layout>
@@ -152,7 +152,7 @@ Result:
 
 ## All Together
 
-`````md
+`````md{codeTitle: "markdown"}
 ```html{3,5-7}{numberLines: 21}{codeTitle: "In src/pages/Index.vue"}
 <template>
   <Layout>
@@ -182,7 +182,40 @@ Result
 </template>
 ```
 
+## Prompt
 
+To show fancy prompts next to shell commands (only triggers on `bash`), either set `prompt.global` to `true` in `gridsome.config.js`,
+or pass at least one of `{outputLines: <range>}`, `{promptUser: <user>}`, or `{promptHost: <host>}` to a snippet
+
+By default, every line gets a prompt appended to the start, this behaviour can be changed by specifying `{outputLines: <range>}`
+to the language.
+
+``````md{codeTitle: "markdown}
+```bash{outputLines: 2}
+yarn add gridsome-plugin-prismjs-all -D
+```
+``````
+
+Result:
+
+```bash{outputLines: 2}
+yarn add gridsome-plugin-prismjs-all
+```
+
+The user and host used in the appended prompt is pulled from the `prompt.user` and `prompt.host` values,
+unless explicitly overridden by the `promptUser` and `promptHost` options in the snippet, e.g.:
+
+``````md{codeTitle: "markdown}
+```bash{promptUser: JohnSnow}{promptHost: the.wall}
+yarn add gridsome-plugin-prismjs-all -D
+```
+``````
+
+Result:
+
+```bash{promptUser: JohnSnow}{promptHost: the.wall}
+yarn add gridsome-plugin-prismjs-all -D
+```
 
 
 ## Options

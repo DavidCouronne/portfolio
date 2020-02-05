@@ -68,9 +68,6 @@
         <v-btn :to="$url('/blog')">
           Blog
         </v-btn>
-        <v-btn :to="$url('/docs')">
-          Documentation
-        </v-btn>
       </v-toolbar-items>
 
       <toggle-theme
@@ -101,8 +98,8 @@
         itemsExt: [
           {
             faIcon: 'github',
-            title: 'Kelvin Git',
-            to: 'https://github.com/kelvin2go',
+            title: 'David Git',
+            to: 'https://github.com/DavidCouronne',
             target: '_blank',
           },
         ],

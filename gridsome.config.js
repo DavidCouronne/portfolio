@@ -10,16 +10,7 @@ module.exports = {
     'Portfolio de David Couronné powerd by Gridsome and Vuetify',
   siteUrl: 'https://davidcouronne.netlify.com',
   plugins: [
-    
-    {
-      use: '@gridsome/vue-remark',
-      options: {
-        typeName: 'Documentation', // Required
-        baseDir: './docs', // Where .md files are located
-        pathPrefix: '/docs', // Add route prefix. Optional
-        template: './src/templates/Documentation.vue', // Optional
-      },
-    },
+
     {
       use: '@gridsome/source-filesystem',
       options: {
