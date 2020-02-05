@@ -9,7 +9,7 @@ import './assets/style/index.scss'
 
 import { vuetifyConfig } from './vuetify.config.js'
 
-//require('gridsome-plugin-remark-prismjs-all/themes/night-owl.scss')
+// require('gridsome-plugin-remark-prismjs-all/themes/night-owl.scss')
 
 export default function (Vue, { head, appOptions }) {
   // Set default layout as a global component

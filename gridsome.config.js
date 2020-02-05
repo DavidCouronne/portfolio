@@ -7,9 +7,28 @@
 module.exports = {
   siteName: 'Portfolio de David Couronné',
   siteDescription:
-    'Portfolio de David Couronné powerd by Gridsome and Tailwind CSS',
+    'Portfolio de David Couronné powerd by Gridsome and Vuetify',
   siteUrl: 'https://davidcouronne.netlify.com',
   plugins: [
+    {
+      use: 'gridsome-plugin-pwa',
+      options: {
+        title: 'Portfolio David Couronné',
+        startUrl: '/',
+        display: 'standalone',
+        statusBarStyle: 'default',
+        manifestPath: 'manifest.json',
+        disableServiceWorker: false,
+        serviceWorkerPath: 'service-worker.js',
+        cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
+        shortName: 'portfolio',
+        themeColor: '#666600',
+        backgroundColor: '#ffffff',
+        icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
+        msTileImage: '',
+        msTileColor: '#666600',
+      },
+    },
     {
       use: '@gridsome/vue-remark',
       options: {
