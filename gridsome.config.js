@@ -5,76 +5,146 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Portfolio de David Couronné',
-  siteDescription:
-    'Portfolio de David Couronné powerd by Gridsome and Vuetify',
-  siteUrl: 'https://davidcouronne.netlify.com',
+  siteName: "David Couronné",
+  siteDescription: "Welcome to my Blog",
+  siteUrl: "http://localhost:8080",
   plugins: [
-
     {
-      use: '@gridsome/source-filesystem',
+      use: "gridsome-plugin-pwa",
       options: {
-        path: 'blog/**/*.md',
-        typeName: 'Post',
-        refs: {
-          tags: {
-            typeName: 'Tag',
-            create: true,
-          },
+        title: "Gridsome",
+        startUrl: "/",
+        display: "standalone",
+        statusBarStyle: "default",
+        manifestPath: "manifest.json",
+        disableServiceWorker: false,
+        serviceWorkerPath: "service-worker.js",
+        cachedFileTypes: "js,json,css,html,png,jpg,jpeg,svg",
+        shortName: "Gridsome",
+        themeColor: "#666600",
+        backgroundColor: "#ffffff",
+        icon: "src/favicon.png", // must be provided like 'src/favicon.png'
+        msTileImage: "",
+        msTileColor: "#666600"
+      }
+    },
+    {
+      use: "gridsome-plugin-tailwindcss",
+      options: {
+        tailwindConfig: "./tailwind.config.js",
+        purgeConfig: {
+          whitelist: [
+            "svg-inline--fa",
+            "table",
+            "table-striped",
+            "table-bordered",
+            "table-hover",
+            "table-sm"
+          ],
+          whitelistPatterns: [
+            /fa-$/,
+            /blockquote$/,
+            /code$/,
+            /pre$/,
+            /table$/,
+            /table-$/
+          ]
         },
-      },
+        presetEnvConfig: {},
+        shouldPurge: false,
+        shouldImport: true,
+        shouldTimeTravel: true,
+        shouldPurgeUnusedKeyframes: true
+      }
     },
-
     {
-      use: '@gridsome/plugin-sitemap',
+      use: "gridsome-source-static-meta",
       options: {
-        cacheTime: 600000, // default
-      },
+        path: "content/site/*.json"
+      }
     },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "Author",
+        path: "./content/author/*.md"
+      }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "Blog",
+        path: "./content/blog/**/*.md",
+        refs: {
+          author: "Author",
+          tags: {
+            typeName: "Tag",
+            create: true
+          },
+          category: {
+            typeName: "Category",
+            create: true
+          }
+        }
+      }
+    }
   ],
-  templates: { Post: '/:title', Tag: '/tag/:id' },
   transformers: {
     remark: {
-      externalLinksTarget: '_blank',
-      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-      anchorClassName: 'icon icon-link',
       plugins: [
         [
-          'gridsome-plugin-remark-prismjs-all',
+          "gridsome-plugin-remark-prismjs-all",
           {
             aliases: {
-              js: 'javascript',
-              sh: 'bash',
-            },
-            languageExtensions: [
-              {
-                language: 'vue',
-                extend: 'html',
-                definition: {
-                  vue_types: /(Vue)/,
-                },
-                insertBefore: {
-                  function: {
-                    vue_keywords: /(v-if|v-for)/,
-                  },
-                },
-              },
-              {
-                language: 'toml',
-                extend: 'yaml',
-                definition: {
-                  toml_types: /(Toml)/,
-                },
-                insertBefore: {
-                  function: {
-                    toml_keywords: /(build|header)/,
-                  },
-                },
-              },
-            ],
-          },
+              dosini: `ini`,
+              env: `bash`,
+              es6: `js`,
+              flowchart: `none`,
+              gitignore: `none`,
+              gql: `graphql`,
+              htaccess: `apacheconf`,
+              mdx: `markdown`,
+              md: `markdown`,
+              ml: `fsharp`,
+              styl: `stylus`
+            }
+          }
         ],
-      ],
-    },
+        "@noxify/gridsome-remark-table-align",
+        [
+          "@noxify/gridsome-remark-classes",
+          {
+            table: "table table-striped",
+            "tableCell[align=center]": "text-center",
+            "tableCell[align=right]": "text-right"
+          }
+        ]
+      ]
+    }
   },
-}
+  templates: {
+    Blog: [
+      {
+        path: "/blog/:title"
+      }
+    ],
+    Category: [
+      {
+        path: "/category/:title",
+        component: "~/templates/Category.vue"
+      }
+    ],
+    Author: [
+      {
+        path: "/author/:name",
+        component: "~/templates/Author.vue"
+      }
+    ],
+    Tag: [
+      {
+        path: "/tags/:title",
+        component: "~/templates/Tag.vue"
+      }
+    ]
+  }
+};
