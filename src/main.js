@@ -1,4 +1,7 @@
 import DefaultLayout from '~/layouts/Default.vue'
+import HeaderPartial from '~/layouts/partials/HeaderWithNavbar.vue'
+import NavbarPartial from '~/layouts/partials/Navbar.vue'
+import FooterPartial from '~/layouts/partials/Footer.vue'
 import VTooltip from 'v-tooltip'
 
 import '~/assets/scss/main.scss'
@@ -18,6 +21,9 @@ library.add(fab)
 
 export default function(Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
+  Vue.component('HeaderPartial', HeaderPartial )
+  Vue.component('NavbarPartial', NavbarPartial)
+  Vue.component('FooterPartial', FooterPartial)
 
   Vue.component('font-awesome', FontAwesomeIcon)
 
