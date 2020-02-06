@@ -21,7 +21,7 @@ library.add(fab)
 
 export default function(Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
-  Vue.component('HeaderPartial', HeaderPartial )
+  Vue.component('HeaderPartial', HeaderPartial)
   Vue.component('NavbarPartial', NavbarPartial)
   Vue.component('FooterPartial', FooterPartial)
 

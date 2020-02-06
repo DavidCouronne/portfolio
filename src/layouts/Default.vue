@@ -17,8 +17,6 @@ query {
 </static-query>
 
 <script>
-
-
 export default {
   props: {
     hideHeader: {
@@ -29,11 +27,6 @@ export default {
       type: Boolean,
       default: false
     }
-  },
-  components: {
-    HeaderPartial,
-    NavbarPartial,
-    FooterPartial
   },
 
   metaInfo: {
