@@ -5776,7 +5776,7 @@ gridsome-source-static-meta@^1.0.1:
     globby "^10.0.1"
     json-parse-better-errors "^1.0.2"
 
-gridsome@^0.7.0:
+gridsome@^0.7.12:
   version "0.7.12"
   resolved "https://registry.yarnpkg.com/gridsome/-/gridsome-0.7.12.tgz#62f602797fb8a18a0b61f6e16a41714743d10f85"
   integrity sha512-XoUedYsRtgXCD/Aj93WHj0yXnsC6ciYg6gjup7P6a/HeVC4Jsnl58DDff9v8GUs0ZucH78WyGrcautuRtw0Iug==

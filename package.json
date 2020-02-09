@@ -4,14 +4,15 @@
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.4.0",
     "@noxify/gridsome-remark-classes": "^1.0.0",
     "@noxify/gridsome-remark-table-align": "^1.0.0",
-    "gridsome": "^0.7.0",
+    "gridsome": "^0.7.12",
     "gridsome-plugin-pwa": "^0.0.12",
     "gridsome-source-static-meta": "^1.0.1",
     "lodash": "^4.17.15",
