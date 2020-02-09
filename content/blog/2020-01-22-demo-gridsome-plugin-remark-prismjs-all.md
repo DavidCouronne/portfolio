@@ -13,11 +13,6 @@ author: author1
 ---
 ## Basic usage
 
-<details class="custom-block details p-4">
-<summary>Click Me</summary> 
-<p>This is a details block, which does not work in IE / Edge</p>
-</details>
-
 ``````markdown{codeTitle: "In a markdown file"}
 ```js
 const myvar = "some value";
