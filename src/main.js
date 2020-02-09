@@ -24,7 +24,6 @@ export default function(Vue, { router, head, isClient }) {
   Vue.component('NavbarPartial', NavbarPartial)
   Vue.component('FooterPartial', FooterPartial)
   Vue.component('Layout', DefaultLayout)
- 
 
   Vue.component('font-awesome', FontAwesomeIcon)
 
