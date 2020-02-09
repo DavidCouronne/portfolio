@@ -5747,10 +5747,15 @@ gridsome-plugin-pwa@^0.0.12:
     register-service-worker "^1.6.2"
     workbox-build "^4.3.1"
 
-gridsome-plugin-remark-prismjs-all@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/gridsome-plugin-remark-prismjs-all/-/gridsome-plugin-remark-prismjs-all-0.3.1.tgz#f2e777eb51c0e5c89004907241e1f5fb39153f06"
-  integrity sha512-7orMgKKsTcoTeBSh301h6f51dBLVcroUFEl1//esMsusUXVMmpBlQEUb8iZnBFUZIeiYCB3v7LjFrfbVFingnQ==
+gridsome-plugin-remark-container@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/gridsome-plugin-remark-container/-/gridsome-plugin-remark-container-0.0.1.tgz#e161e2ce2128e795b3a5d536711e214e24447ee9"
+  integrity sha512-GWkRdpfZUf7huzn6Bnuc4U6gFtFF1j89YBNEBTXTfPj8/F7Cl7yEbwsBjwh04Pj3WPol+tTpDI/KxRgMIW4d5g==
+
+gridsome-plugin-remark-prismjs-all@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/gridsome-plugin-remark-prismjs-all/-/gridsome-plugin-remark-prismjs-all-0.3.2.tgz#d1f9557e97e4f4d0725d5fef64cc76f62df5ea64"
+  integrity sha512-tNNaHEDgiLOLwpMaDM8yRmpdpTqjYTOvJMaQjhRbgtg94q7vx0HyOD4LZpHKez0JmXD4t6LKnYrP9pD8t2kuCA==
   dependencies:
     lodash "^4.17.15"
     parse-numeric-range "^0.0.2"

@@ -98,6 +98,7 @@ module.exports = {
   transformers: {
     remark: {
       plugins: [
+        'gridsome-plugin-remark-container',
         [
           'gridsome-plugin-remark-prismjs-all',
           {
