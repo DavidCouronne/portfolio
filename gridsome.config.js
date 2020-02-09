@@ -18,7 +18,7 @@ module.exports = {
     {
       use: 'gridsome-plugin-pwa',
       options: {
-        title: 'Gridsome',
+        title: 'David Couronné',
         startUrl: '/',
         display: 'standalone',
         statusBarStyle: 'default',
@@ -26,12 +26,12 @@ module.exports = {
         disableServiceWorker: false,
         serviceWorkerPath: 'service-worker.js',
         cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
-        shortName: 'Gridsome',
-        themeColor: '#666600',
-        backgroundColor: '#ffffff',
+        shortName: 'davidcouronne',
+        themeColor: '#2196f3',
+        backgroundColor: '#2196f3',
         icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
         msTileImage: '',
-        msTileColor: '#666600'
+        msTileColor: '#2196f3'
       }
     },
     {
