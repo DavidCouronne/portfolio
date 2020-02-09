@@ -4,12 +4,7 @@ date: 2019-10-04
 post: true
 category: dev
 title: Astuces Python rapides à apprendre
-description: Python est l’un des langages les plus utilisés par de nombreuses personnes
-  dans les domaines de la science des données, de l’apprentissage automatique, du
-  développement Web, des scripts, de l’automatisation, etc. Une partie de la raison
-  de cette popularité est sa simplicité et sa facilité à l’apprendre. Si vous lisez
-  ceci, il est fort probable que vous utilisiez déjà Python ou du moins que vous y
-  êtes intéressé. Dans cet article, nous allons voir brièvement 30 extraits de code
+description: Dans cet article, nous allons voir brièvement quelques extraits de code
   abrégés que vous pouvez comprendre et apprendre en 30 secondes ou moins.
 tags: python
 cover_image: https://res.cloudinary.com/dpw19qolx/image/upload/t_cover-image/v1561523334/St_Michael_27s_Mount_II5302_x_2982.jpg
