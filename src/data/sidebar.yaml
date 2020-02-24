@@ -1,14 +1,18 @@
 ---
+- group: Guide
+  text: Guide
+  children:
+  - text: ''
 - group: getting-started
   text: gettingStarted
   icon: mdi-speedometer
   children:
-    - text: Installation
-      to: /docs/installation
+  - text: Installation
+    to: "/docs/installation"
 - divider: true
 - group: customization
   text: customization
   icon: mdi-cogs
   children:
-    - text: theme
-      to: /docs/customize
+  - text: theme
+    to: "/docs/customize"
