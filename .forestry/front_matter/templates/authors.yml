@@ -25,3 +25,5 @@ fields:
     max: 
     labelField: 
   label: contributors
+pages:
+- content/author/main.md.md
