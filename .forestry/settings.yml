@@ -10,7 +10,7 @@ sections:
   create: all
   match: "**/*"
 - type: directory
-  path: sc/data
+  path: src/data
   label: Sidebars
   create: all
   match: "**/*"
