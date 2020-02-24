@@ -1,5 +1,5 @@
 ---
-author: author1
+author: davidcouronne
 date: 2019-10-12
 post: true
 title: Python Mathplotlib CSV

@@ -9,7 +9,7 @@ description: "Demo file for syntax highlighting"
 category: dev
 cover_image: https://res.cloudinary.com/dpw19qolx/image/upload/t_cover-image/v1561731158/shahadat-shemul-gnyA8vd3Otc-unsplash.jpg
 cover_image_caption: Photo by Shahadat Shemul on Unsplash
-author: author1
+author: davidcouronne
 ---
 ## Basic usage
 

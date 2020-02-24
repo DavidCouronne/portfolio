@@ -9,7 +9,7 @@ description: "A step-by-step guide to install and configure Eslint and Prettier 
 cover_image: https://res.cloudinary.com/dpw19qolx/image/upload/t_cover-image/v1572706812/khachik-simonian-nXOB-wh4Oyc-unsplash.jpg
 category: dev
 cover_image_caption: Photo by Khachik Simonian on Unsplash
-author: author1
+author: davidcouronne
 ---
 
 While VueJS has the great [Vue Cli](https://cli.vuejs.org/guide/) tool, Gridsome has "not yet" the equivalent.

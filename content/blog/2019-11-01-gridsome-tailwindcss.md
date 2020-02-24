@@ -2,7 +2,7 @@
 title: "Gridsome et Tailwind CSS sans plugin !"
 date: 2019-11-01
 published: true
-author: author1
+author: davidcouronne
 category: dev
 tags: Gridsome, TailwindCSS
 canonical_url: false
