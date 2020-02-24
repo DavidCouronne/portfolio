@@ -35,15 +35,3 @@ fields:
 - type: text
   name: author
   label: author
-- name: sidebartest
-  type: select
-  default: []
-  config:
-    required: false
-    options: []
-    source:
-      type: documents
-      section: sidebar
-      file: src/data/sidebar.yaml
-      path: 
-  label: sidebartest
