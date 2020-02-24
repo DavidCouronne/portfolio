@@ -9,6 +9,7 @@ fields:
   - type: text
     name: group
     label: group
+    description: Leave empty if non collapsable item
   - type: text
     name: text
     label: text
@@ -25,3 +26,11 @@ fields:
     - type: text
       name: to
       label: to
+    - name: new
+      type: boolean
+      label: new
+      description: new feature
+    - name: updated
+      type: boolean
+      label: updated
+      description: updated feature
