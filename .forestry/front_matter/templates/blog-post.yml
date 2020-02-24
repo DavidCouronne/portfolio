@@ -5,12 +5,19 @@ fields:
 - type: text
   name: title
   label: title
+  config:
+    required: true
 - type: datetime
   name: date
   label: date
+  config:
+    export_format: YYYY-DD-MM
+    required: true
+  default: now
 - type: boolean
   name: published
   label: published
+  default: true
 - type: text
   name: tags
   label: tags
@@ -29,9 +36,15 @@ fields:
 - type: text
   name: category
   label: category
+  config:
+    required: true
+  default: dev
 - type: text
   name: cover_image_caption
   label: cover_image_caption
 - type: text
   name: author
   label: author
+  config:
+    required: true
+  default: davidcouronne
