@@ -34,3 +34,15 @@ fields:
       type: boolean
       label: updated
       description: updated feature
+    - name: totest
+      type: select
+      default: []
+      config:
+        required: false
+        options: []
+        source:
+          type: pages
+          section: blog
+          file: content/blog/2019-10-04-30-astuces-python-rapides-à-apprendre.md
+          path: 
+      label: totest
