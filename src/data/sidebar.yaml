@@ -3,6 +3,7 @@
   text: Guide
   children:
   - text: ''
+    totest: content/blog/2019-10-04-30-astuces-python-rapides-à-apprendre.md
 - group: getting-started
   text: gettingStarted
   icon: mdi-speedometer
