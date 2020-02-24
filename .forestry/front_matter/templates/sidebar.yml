@@ -1,0 +1,27 @@
+---
+label: Sidebar
+hide_body: true
+fields:
+- type: field_group_list
+  name: Sidebar
+  label: Sidebar
+  fields:
+  - type: text
+    name: group
+    label: group
+  - type: text
+    name: text
+    label: text
+  - type: text
+    name: icon
+    label: icon
+  - type: field_group_list
+    name: children
+    label: children
+    fields:
+    - type: text
+      name: text
+      label: text
+    - type: text
+      name: to
+      label: to
