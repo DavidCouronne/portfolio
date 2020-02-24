@@ -211,10 +211,24 @@ export default {
           name: 'description',
           content: this.$page.blog.description
         },
+        // open-graph tags
         {
           property: 'og:title',
           content: this.$page.blog.title
         },
+        {
+          property: 'og:description',
+          content: this.$page.blog.description
+        },
+        {
+          property: 'og:image',
+          content: this.$page.blog.cover_image || ''
+        },
+        {
+          property: 'og:url',
+          content: this.$static.metadata.siteUrl + this.$page.blog.path
+        },
+        // twitter card
         {
           name: 'twitter:card',
           content: this.$page.blog.cover_image
@@ -225,16 +239,36 @@ export default {
           name: 'twitter:creator',
           content: '@nollan94'
         },
+        { name: 'twitter:title', content: this.$page.blog.title },
+        { name: 'twitter:description', content: this.$page.blog.description }
+      ],
+      // Some ld+json tags
+      script: [
         {
-          property: 'og:description',
-          content: this.$page.blog.description
-        },
-        {
-          property: 'og:image',
-          content: this.$page.blog.cover_image || ''
+          type: 'application/ld+json',
+          json: {
+            '@context': 'http://schema.org',
+            '@type': 'BlogPosting',
+            description: this.$page.blog.description,
+            datePublished: this.$page.blog.date,
+            author: {
+              name: 'David Couronné'
+            },
+            headline: this.$page.blog.title,
+            image: this.$page.blog.cover_image
+          }
         }
       ]
     }
   }
 }
 </script>
+
+<static-query>
+query {
+  metadata {
+    siteName
+    siteUrl
+  }
+}
+</static-query>
