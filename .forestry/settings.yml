@@ -7,7 +7,6 @@ sections:
 - type: document
   path: src/data/sidebar.yaml
   label: Sidebar
-  match: "**/*"
 - type: directory
   path: content/blog
   label: Blog

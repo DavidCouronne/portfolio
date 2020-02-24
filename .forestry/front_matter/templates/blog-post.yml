@@ -1,0 +1,37 @@
+---
+label: Blog Post
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: boolean
+  name: published
+  label: published
+- type: text
+  name: tags
+  label: tags
+- type: boolean
+  name: series
+  label: series
+- type: boolean
+  name: canonical_url
+  label: canonical_url
+- type: text
+  name: description
+  label: description
+- type: file
+  name: cover_image
+  label: cover_image
+- type: text
+  name: category
+  label: category
+- type: text
+  name: cover_image_caption
+  label: cover_image_caption
+- type: text
+  name: author
+  label: author
