@@ -19,6 +19,7 @@
             {{ $page.author.belongsTo.totalCount }} {{ postLabel }}
             &nbsp;&middot;&nbsp;
             <a
+              v-if="$page.author.facebook"
               :href="$page.author.facebook"
               target="_blank"
               rel="noopener noreferrer"
@@ -37,6 +38,16 @@
             </a>
             &nbsp;
             <a
+              :href="$page.author.github"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-black"
+            >
+              <font-awesome :icon="['fab', 'github']" />
+            </a>
+            &nbsp;
+            <a
+              v-if="$page.author.linkedin"
               :href="$page.author.linkedin"
               target="_blank"
               rel="noopener noreferrer"
@@ -81,6 +92,7 @@
       facebook
       twitter
       linkedin
+      github
       belongsTo(perPage: 5, page: $page) @paginate {
         totalCount
         pageInfo {
