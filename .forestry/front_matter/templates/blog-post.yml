@@ -35,3 +35,15 @@ fields:
 - type: text
   name: author
   label: author
+- name: authortest
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: authors
+      file: 
+      path: 
+  label: authortest
