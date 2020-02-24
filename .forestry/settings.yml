@@ -4,6 +4,10 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: document
+  path: scr/contributors.yalm
+  label: contributors
+  match: "**/*"
 - type: directory
   path: content/author
   label: Authors
