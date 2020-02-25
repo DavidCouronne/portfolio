@@ -3,30 +3,21 @@
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden pt-24">
       <div class="lg:mx-32 md:mx-16 sm:mx-8 mx-4 pt-8">
         <section class="post-header container mx-auto px-0 mb-4 border-b">
-          <span
-            class="text-blue-500 font-medium uppercase tracking-wide text-sm"
-          >
-            <g-link :to="$page.blog.category.path" class="hover:underline">{{
+          <span class="text-blue-500 font-medium uppercase tracking-wide text-sm">
+            <g-link :to="$page.blog.category.path" class="hover:underline">
+              {{
               $page.blog.category.title
-            }}</g-link>
+              }}
+            </g-link>
           </span>
-          <h1 class="text-5xl font-medium leading-none mt-0">
-            {{ $page.blog.title }}
-          </h1>
-          <div
-            class="text-2xl pt-4 pb-10 text-gray-700 font-serif"
-            v-html="$page.blog.description"
-          ></div>
+          <h1 class="text-5xl font-medium leading-none mt-0">{{ $page.blog.title }}</h1>
+          <div class="text-2xl pt-4 pb-10 text-gray-700 font-serif" v-html="$page.blog.description"></div>
         </section>
         <section class="post-author-list mb-10 mx-0">
           <div class="flex items-center">
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list">
-                <li
-                  v-for="author in $page.blog.author"
-                  :key="author.id"
-                  class="author-list-item"
-                >
+                <li v-for="author in $page.blog.author" :key="author.id" class="author-list-item">
                   <g-link :to="author.path" v-tooltip="author.name">
                     <g-image
                       :src="author.image"
@@ -39,23 +30,21 @@
             </div>
             <div class="pl-3 flex flex-col text-xs leading-none uppercase">
               <p>
-                <span
-                  v-for="(author, index) in $page.blog.author"
-                  :key="author.id"
-                >
+                <span v-for="(author, index) in $page.blog.author" :key="author.id">
                   <g-link
                     :to="author.path"
                     v-tooltip="author.name"
                     class="hover:underline"
-                    >{{ author.name }}</g-link
-                  >
+                  >{{ author.name }}</g-link>
                   <span v-if="index < $page.blog.author.length - 1">,</span>
                 </span>
               </p>
               <p class="text-gray-700">
-                <time :datetime="$page.blog.datetime">{{
+                <time :datetime="$page.blog.datetime">
+                  {{
                   $page.blog.humanTime
-                }}</time>
+                  }}
+                </time>
                 &nbsp;&middot;&nbsp; {{ $page.blog.timeToRead }} min read
               </p>
             </div>
@@ -63,17 +52,12 @@
         </section>
       </div>
       <section class="post-image mx-auto max-w-2xl">
-        <g-image class=" rounded" :src="$page.blog.cover_image"></g-image>
+        <g-image class="rounded" :src="$page.blog.cover_image"></g-image>
       </section>
 
       <div class="lg:mx-32 md:mx-16 px-4 sm:px-0">
-        <section
-          class="post-content container mx-auto relative font-serif text-gray-700"
-        >
-          <div
-            class="post-content-text text-xl"
-            v-html="$page.blog.content"
-          ></div>
+        <section class="post-content container mx-auto relative font-serif text-gray-700">
+          <div class="post-content-text text-xl" v-html="$page.blog.content"></div>
         </section>
 
         <section class="post-tags container mx-auto relative py-10">
@@ -82,27 +66,16 @@
             :key="tag.id"
             :to="tag.path"
             class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-2 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full"
-            >{{ tag.title }}</g-link
-          >
+          >{{ tag.title }}</g-link>
         </section>
       </div>
     </div>
 
-    <section
-      class="post-related bg-black text-gray-200 pt-10 border-b border-b-gray-900"
-    >
+    <section class="post-related bg-black text-gray-200 pt-10 border-b border-b-gray-900">
       <div class="container mx-auto">
         <div class="flex flex-wrap pt-8 pb-8 mx-4 sm:-mx-4">
-          <PostListItem
-            v-if="$page.previous"
-            :record="$page.previous"
-            :border="false"
-          ></PostListItem>
-          <PostListItem
-            v-if="$page.next"
-            :record="$page.next"
-            :border="false"
-          ></PostListItem>
+          <PostListItem v-if="$page.previous" :record="$page.previous" :border="false"></PostListItem>
+          <PostListItem v-if="$page.next" :record="$page.next" :border="false"></PostListItem>
         </div>
       </div>
     </section>
@@ -250,12 +223,17 @@ export default {
             '@context': 'http://schema.org',
             '@type': 'BlogPosting',
             description: this.$page.blog.description,
-            datePublished: this.$page.blog.date,
+            datePublished: this.$page.blog.datetime,
+            dateModified: this.$page.blog.datetime,
             author: {
               name: 'David Couronné'
             },
             headline: this.$page.blog.title,
-            image: this.$page.blog.cover_image
+            image: this.$page.blog.cover_image,
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': this.$static.metadata.siteUrl + this.$page.blog.path
+            }
           }
         }
       ]
