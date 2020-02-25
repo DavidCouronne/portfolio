@@ -7,6 +7,10 @@ fields:
   label: title
   config:
     required: true
+- type: boolean
+  name: published
+  label: published
+  default: true
 - type: datetime
   name: date
   label: date
@@ -14,10 +18,16 @@ fields:
     export_format: YYYY-DD-MM
     required: true
   default: now
-- type: boolean
-  name: published
-  label: published
-  default: true
+- name: datepublished
+  type: datetime
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: true
+  label: datePublished
+  default: now
 - type: text
   name: tags
   label: tags
@@ -48,3 +58,15 @@ fields:
   config:
     required: true
   default: davidcouronne
+- name: datemodified
+  type: datetime
+  label: dateModified
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: true
+  default: now
+pages:
+- content/blog/seo-gridsome-twitter-card-open-graph-and-json-tags.md
