@@ -221,15 +221,10 @@ And the page query:
                title
                path
                }
-            author {
-                name
-                twitter
-                }
-            tags {
-                id
-                title
-                path
-                }
+           author {
+               name
+               twitter
+               }
             }
         }
 </page-query>
