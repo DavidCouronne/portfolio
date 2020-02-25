@@ -185,7 +185,7 @@ For example:
 published: true
 date: 2020-25-02
 datepublished: 2020-02-25T19:31:47Z
-datemodified: 2020-02-25T19:31:47Z
+datemodified: 2020-02-25T21:19:16Z
 category: dev
 author:
   name: John Doe
