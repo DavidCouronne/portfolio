@@ -10,8 +10,8 @@ tags: seo, Gridsome
 series: false
 canonical_url: false
 description: How to add twitter card and open-graph tags
-cover_image: ''
-cover_image_caption: ''
+cover_image: https://res.cloudinary.com/dpw19qolx/image/upload/v1562052876/nebulae-1199180_1920.jpg
+cover_image_caption: Nebulae from Unsplash
 
 ---
 SEO matter's. With Gridsome, thank's to vue-meta, you can easely add open-graph, twitter and google tags.
