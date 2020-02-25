@@ -68,3 +68,5 @@ fields:
     time_format: 
     display_utc: true
   default: now
+pages:
+- content/blog/seo-gridsome-twitter-card-open-graph-and-json-tags.md
