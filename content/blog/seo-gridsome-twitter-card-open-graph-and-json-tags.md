@@ -139,7 +139,7 @@ metaInfo() {
         },
         {
           name: 'twitter:creator',
-          content: '@nollan94'
+          content: this.$page.blog.author.twitter
         },
         { name: 'twitter:title', content: this.$page.blog.title },
         { name: 'twitter:description', content: this.$page.blog.description }
@@ -155,7 +155,7 @@ metaInfo() {
             datePublished: this.$page.blog.datePublished,
             dateModified: this.$page.blog.dateModified,
             author: {
-              name: this.$page.blog.author
+              name: this.$page.blog.author.name
             },
             headline: this.$page.blog.title,
             image: this.$page.blog.cover_image,
@@ -171,3 +171,7 @@ metaInfo() {
   ```
 
   You need to adapt your queries, and your frontmatter in order to match the SEO fields.
+
+:::tip
+If ou're the only one author of your blog, you can hard-code your meta data.
+:::
