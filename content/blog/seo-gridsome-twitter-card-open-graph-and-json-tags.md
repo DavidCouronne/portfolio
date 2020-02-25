@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 date: 2020-25-02
 datepublished: 2020-02-25T19:31:47Z
 category: dev
@@ -12,8 +12,8 @@ canonical_url: false
 description: How to add twitter card and open-graph tags
 cover_image: https://res.cloudinary.com/dpw19qolx/image/upload/v1562052876/nebulae-1199180_1920.jpg
 cover_image_caption: Nebulae from Unsplash
-
 ---
+
 SEO matter's. With Gridsome, thank's to vue-meta, you can easely add open-graph, twitter and google tags.
 
 This article is not about improving SEO, just add tags programmatically in your Gridosme project.
@@ -26,8 +26,8 @@ We need some tools for validate our SEO tags
 
 :::important
 
-+ you need a twitter account !
-+ work only with live site, not development mode
+- you need a twitter account !
+- work only with live site, not development mode
 
 :::
 
@@ -51,19 +51,19 @@ His structure is something like this:
 
 ```html
 <template>
-    ...
+  ...
 </template>
 
 <page-query>
-    ...
+  ...
 </page-query>
 
 <script>
-import ...
+  import ...
 
-export default {
-    ...
-}
+  export default {
+      ...
+  }
 </script>
 ```
 
@@ -100,9 +100,7 @@ export default {
 </script>
 ```
 
-
 With a complete example:
-
 
 ```js
 metaInfo() {
@@ -168,10 +166,72 @@ metaInfo() {
       ]
     }
   }
-  ```
+```
 
-  You need to adapt your queries, and your frontmatter in order to match the SEO fields.
+You need to adapt your queries, and your frontmatter in order to match the SEO fields.
 
 :::tip
-If ou're the only one author of your blog, you can hard-code your meta data.
+If you're the only one author of your blog, you can hard-code your meta data.
 :::
+
+## Frontmatter and page queries
+
+In order to match with the previous config with open-graph tags, twitter card tags and ld+json tags, you must adapt the frontmaters of your blog posts.
+
+For example:
+
+```md{codeTitle: "my-awesome-post.md"}
+---
+published: true
+date: 2020-25-02
+datepublished: 2020-02-25T19:31:47Z
+datemodified: 2020-02-25T19:31:47Z
+category: dev
+author:
+  name: John Doe
+  twitter: @johndoe
+title: Hello World !
+tags: seo, Gridsome
+description: lorem ipsum
+cover_image: https://res.cloudinary.com/dpw19qolx/image/upload/v1562052876/nebulae-1199180_1920.jpg
+cover_image_caption: Nebulae from Unsplash
+---
+
+bla bla bla
+```
+
+And the page query:
+
+```html{codeTitle: "BlogPost.vue"}
+<page-query>
+  query($id: ID!, $previousElement: ID!, $nextElement: ID!) {
+       blog(id: $id) {
+           title
+           path
+           cover_image
+           cover_image_caption
+           description
+           content
+           date : date(format:"DD MMMM YYYY")
+           datePublished : date(format:"ddd MMM DD YYYY  hh:mm:ss zZ")
+           dateModified : date(format:"ddd MMM DD YYYY hh:mm:ss zZ")
+           timeToRead
+           tags {
+               id
+               title
+               path
+               }
+            author {
+                name
+                twitter
+                }
+            tags {
+                id
+                title
+                path
+                }
+            }
+        }
+</page-query>
+```
+
