@@ -14,3 +14,8 @@ cover_image: ''
 cover_image_caption: ''
 
 ---
+SEO matter's. With Gridsome, thank's to vue-meta, you can easely add open-graph, twitter and google tags.
+
+This article is not about improving SEO, just add tags programmatically in your Gridosme project.
+
+##
