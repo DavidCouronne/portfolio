@@ -97,7 +97,6 @@ export default {
     }
   }
 }
-</script>
 ```
 
 With a complete example:
