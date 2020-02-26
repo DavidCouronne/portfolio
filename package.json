@@ -1,5 +1,7 @@
 {
   "name": "portfolio-david-couronne",
+  "license": "MIT",
+  "author": "David Couronné <couronne.david@gmail.com>",
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
