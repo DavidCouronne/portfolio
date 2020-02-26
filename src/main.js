@@ -15,6 +15,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 
 //require('gridsome-plugin-remark-prismjs-all/themes/night-owl.css');
 
+
+
 config.autoAddCss = false
 library.add(fas)
 library.add(fab)

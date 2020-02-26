@@ -6,6 +6,25 @@ var flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette')
 
 module.exports = {
   theme: {
+    fontFamily: {
+      sans: [
+        'Roboto',
+        'system-ui',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Helvetica Neue',
+        'Arial',
+        'Noto Sans',
+        'sans-serif',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji'
+      ],
+      serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+      montserrat: ['Montserrat']
+    },
     borderWidth: {
       default: '1px',
       '0': '0',
@@ -113,6 +132,7 @@ module.exports = {
     },
     function({ addBase, config }) {
       addBase({
+        body: { fontFamily: config('theme.fontFamily.sans').join(', ') },
         h1: {
           fontSize: config('theme.fontSize.5xl'),
           fontWeight: config('theme.fontWeight.bold'),
