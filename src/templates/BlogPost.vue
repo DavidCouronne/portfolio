@@ -57,7 +57,7 @@
 
       <div class="lg:mx-32 md:mx-16 px-4 sm:px-0">
         <section class="post-content container mx-auto relative font-serif text-gray-700">
-          <div class="post-content-text text-xl" v-html="$page.blog.content"></div>
+          <div class="post-content-text text-xl rich-text" v-html="$page.blog.content"></div>
         </section>
 
         <section class="post-tags container mx-auto relative py-10">
