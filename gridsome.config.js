@@ -1,3 +1,9 @@
+const { social } = require('./content/site/social')
+const {
+  headerNavigation,
+  footerNavigation
+} = require('./content/site/navigation')
+
 // This is where project configuration and plugin options are located.
 // Learn more: https://gridsome.org/docs/config
 
@@ -8,6 +14,13 @@ module.exports = {
   siteName: 'David Couronné',
   siteDescription: 'Welcome to my Blog',
   siteUrl: 'https://davidcouronne.netlify.com/',
+  metadata: {
+    author: 'David Couronné',
+    twitter: '@nollan94',
+    social: social(),
+    headerNavigation: headerNavigation(),
+    footerNavigation: footerNavigation()
+  },
   plugins: [
     {
       use: '@gridsome/plugin-sitemap',
@@ -63,12 +76,7 @@ module.exports = {
         shouldPurgeUnusedKeyframes: true
       }
     },
-    {
-      use: 'gridsome-source-static-meta',
-      options: {
-        path: 'content/site/*.json'
-      }
-    },
+
     {
       use: '@gridsome/source-filesystem',
       options: {
