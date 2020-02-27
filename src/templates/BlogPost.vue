@@ -14,7 +14,7 @@
             {{ $page.blog.title }}
           </h1>
           <div
-            class="text-2xl pt-4 pb-10 text-gray-700 font-serif"
+            class="text-2xl pt-4 pb-10 text-gray-700 "
             v-html="$page.blog.description"
           ></div>
         </section>
@@ -67,9 +67,7 @@
       </section>
 
       <div class="lg:mx-32 md:mx-16 px-4 sm:px-0">
-        <section
-          class="post-content container mx-auto relative font-serif text-gray-700"
-        >
+        <section class="post-content container mx-auto relative  text-gray-700">
           <div
             class="post-content-text text-xl rich-text font-sans"
             v-html="$page.blog.content"
