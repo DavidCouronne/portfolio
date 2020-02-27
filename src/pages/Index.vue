@@ -65,8 +65,48 @@ import PostListItem from '~/components/PostListItem.vue'
 import Pagination from '~/components/Pagination.vue'
 
 export default {
-  metaInfo: {
-    title: 'Hello, world!'
+   metaInfo() {
+    return {
+      title: 'Blog de David Couronné',
+      meta: [
+        {
+          name: 'description',
+          content: 'Blog de David Couronné'
+        },
+        // open-graph tags
+        {
+          property: 'og:title',
+          content: 'Blog de David Couronné'
+        },
+        {
+          property: 'og:description',
+          content: 'Blog de David Couronné'
+        },
+        {
+          property: 'og:image',
+          content: 'https://res.cloudinary.com/dpw19qolx/image/upload/v1573405573/art-dark-dawn.jpg'
+        },
+        {
+          property: 'og:url',
+          content: this.$static.metadata.siteUrl
+        },
+        // twitter card
+        {
+          name: 'twitter:card',
+          content: 
+             'summary_large_image'
+            
+        },
+        {
+          name: 'twitter:creator',
+          content: '@nollan94'
+        },
+        { name: 'twitter:title', content: 'Blog de David Couronné' },
+        { name: 'twitter:description', content: 'Blog de David Couronné' }
+      ],
+      // Some ld+json tags
+     
+    }
   },
   components: {
     Pagination,
