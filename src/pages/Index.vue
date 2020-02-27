@@ -74,3 +74,11 @@ export default {
   }
 }
 </script>
+
+<static-query>
+query {
+  metadata {
+    author
+  }
+}
+</static-query>

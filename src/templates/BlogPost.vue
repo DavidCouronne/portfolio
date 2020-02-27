@@ -272,6 +272,8 @@ query {
   metadata {
     siteName
     siteUrl
+    author
+    twitter
   }
 }
 </static-query>
