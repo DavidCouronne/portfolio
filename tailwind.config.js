@@ -3,9 +3,16 @@
 var _ = require('lodash')
 var flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette')
   .default
+const { colors } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   theme: {
+    colors: {
+      gray: colors.gray,
+      white: colors.white,
+      black: colors.black,
+      blue: colors.blue
+    },
     fontFamily: {
       sans: [
         'Roboto',
@@ -21,9 +28,7 @@ module.exports = {
         'Segoe UI Emoji',
         'Segoe UI Symbol',
         'Noto Color Emoji'
-      ],
-      serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
-      montserrat: ['Montserrat']
+      ]
     },
     borderWidth: {
       default: '1px',
