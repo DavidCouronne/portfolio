@@ -43,6 +43,51 @@ Work in development mode, with some copy/paste...
 
 https://search.google.com/structured-data/testing-tool
 
+## Global Metadatas
+
+First we need to configure some basic metadatas, like siteUrl, siteName, etc..
+
+```js{codeTitle: "gridsome.config.js"}
+module.exports = {
+  siteName: 'My Awesome Blog ',
+  siteDescription: 'Welcome to my Blog',
+  siteUrl: 'https:/www.mysite.com/',
+  metadata: {
+    author: 'John Doe',
+    twitter: '@johndoe',
+    // + whatever you want
+  },
+  ...
+}
+```
+
+All this metedatas are accessibles in any page or template, with a `static-query`:
+
+```html{codeTitle: "Something.vue"}
+...
+<static-query>
+query {
+  metadata {
+    siteName
+    siteDescription
+    siteUrl
+    author
+    twitter
+  }
+}
+</static-query>
+...
+```
+
+And then you can use it anywhere in the template, for example:
+
+```js
+{
+  property: 'og:url',
+  content: this.$static.metadata.siteUrl
+},
+```
+
 ## Blog posts
 
 Assume you have a template, `BlogPost.vue` for exemple.
@@ -57,6 +102,16 @@ His structure is something like this:
 <page-query>
   ...
 </page-query>
+
+<static-query>
+query {
+  metadata {
+    siteName
+    siteDescription
+    siteUrl
+  }
+}
+</static-query>
 
 <script>
   import ...
