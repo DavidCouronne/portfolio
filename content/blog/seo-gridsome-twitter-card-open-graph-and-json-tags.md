@@ -31,9 +31,9 @@ We need some tools for validate our SEO tags
 
 :::
 
-https://cards-dev.twitter.com/validator
+<https://cards-dev.twitter.com/validator>
 
-Documentation: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/markup
+Documentation: <https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/markup>
 
 ### Google Data Structure Testing Tool
 
@@ -41,7 +41,7 @@ Documentation: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/
 Work in development mode, with some copy/paste...
 :::
 
-https://search.google.com/structured-data/testing-tool
+<https://search.google.com/structured-data/testing-tool>
 
 ## Global Metadatas
 
@@ -66,15 +66,7 @@ All this metedatas are accessibles in any page or template, with a `static-query
 ```html{codeTitle: "Something.vue"}
 ...
 <static-query>
-query {
-  metadata {
-    siteName
-    siteDescription
-    siteUrl
-    author
-    twitter
-  }
-}
+  query { metadata { siteName siteDescription siteUrl author twitter } }
 </static-query>
 ...
 ```
@@ -104,13 +96,7 @@ His structure is something like this:
 </page-query>
 
 <static-query>
-query {
-  metadata {
-    siteName
-    siteDescription
-    siteUrl
-  }
-}
+  query { metadata { siteName siteDescription siteUrl } }
 </static-query>
 
 <script>
@@ -258,29 +244,10 @@ And the page query:
 
 ```html{codeTitle: "BlogPost.vue"}
 <page-query>
-  query($id: ID!, $previousElement: ID!, $nextElement: ID!) {
-       blog(id: $id) {
-           title
-           path
-           cover_image
-           cover_image_caption
-           description
-           content
-           date : date(format:"DD MMMM YYYY")
-           datePublished : date(format:"ddd MMM DD YYYY  hh:mm:ss zZ")
-           dateModified : date(format:"ddd MMM DD YYYY hh:mm:ss zZ")
-           timeToRead
-           tags {
-               id
-               title
-               path
-               }
-           author {
-               name
-               twitter
-               }
-            }
-        }
+  query($id: ID!, $previousElement: ID!, $nextElement: ID!) { blog(id: $id) {
+  title path cover_image cover_image_caption description content date :
+  date(format:"DD MMMM YYYY") datePublished : date(format:"ddd MMM DD YYYY
+  hh:mm:ss zZ") dateModified : date(format:"ddd MMM DD YYYY hh:mm:ss zZ")
+  timeToRead tags { id title path } author { name twitter } } }
 </page-query>
 ```
-
