@@ -9,7 +9,7 @@ title: 'SEO Gridsome: Twitter card, open-graph and json tags'
 tags: seo, Gridsome
 series: false
 canonical_url: false
-description: How to add twitter card and open-graph tags
+description: How to add twitter card and open-graph tags in Gridsome Blog
 cover_image: https://res.cloudinary.com/dpw19qolx/image/upload/v1562052876/nebulae-1199180_1920.jpg
 cover_image_caption: Nebulae from Unsplash
 ---
