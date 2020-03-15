@@ -3,7 +3,7 @@ const {
   headerNavigation,
   footerNavigation
 } = require('./content/site/navigation')
-
+const marked = require('marked')
 // This is where project configuration and plugin options are located.
 // Learn more: https://gridsome.org/docs/config
 
@@ -27,6 +27,28 @@ module.exports = {
       options: {
         cacheTime: 600000 // default
       }
+    },
+    {
+      use: 'gridsome-plugin-feed',
+      options: {
+        contentTypes: ['Blog'],
+        feedOptions: {
+          title: "David Couronné's Blog",
+          description: 'Blog de David Couronné',
+        },
+        rss: {
+          enabled: true,
+          output: '/blog/index.xml',
+        },
+        htmlFields: ['description', 'content'],
+        enforceTrailingSlashes: false,
+        filterNodes: node => true,
+        nodeToFeedItem: node => ({
+          title: node.title,
+          date: node.date || node.fields.date,
+          content: marked(node.content),
+        }),
+      },
     },
     {
       use: 'gridsome-plugin-pwa',

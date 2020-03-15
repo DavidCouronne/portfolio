@@ -13,6 +13,11 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
+// Import vssue
+import Vssue from 'vssue'
+import GithubV3 from '@vssue/api-github-v3'
+import 'vssue/dist/vssue.css'
+
 //require('gridsome-plugin-remark-prismjs-all/themes/night-owl.css');
 
 config.autoAddCss = false
