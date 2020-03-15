@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: davidcouronne.netlify.com
+Token: 44a000b7d70fc817fd363fe81ae06e918b9073c99077bb22c103ad2ae353b31a
