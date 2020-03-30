@@ -53,7 +53,7 @@ let themes = ['light', 'dark']
 export default {
   data() {
     return {
-      theme: 'light'
+      theme: 'light',
     }
   },
   computed: {
@@ -61,7 +61,7 @@ export default {
       const currentIndex = themes.indexOf(this.theme)
       const nextIndex = (currentIndex + 1) % themes.length
       return themes[nextIndex]
-    }
+    },
   },
   methods: {
     toggleTheme() {
@@ -69,11 +69,11 @@ export default {
       const nextIndex = (currentIndex + 1) % themes.length
       window.__setPreferredTheme(themes[nextIndex])
       this.theme = themes[nextIndex]
-    }
+    },
   },
   async mounted() {
     // set default
     if (typeof window.__theme !== 'undefined') this.theme = window.__theme
-  }
+  },
 }
 </script>

@@ -24,7 +24,7 @@ config.autoAddCss = false
 library.add(fas)
 library.add(fab)
 
-export default function(Vue, { router, head, isClient }) {
+export default function (Vue, { router, head, isClient }) {
   Vue.component('HeaderPartial', HeaderPartial)
   Vue.component('NavbarPartial', NavbarPartial)
   Vue.component('FooterPartial', FooterPartial)
@@ -35,6 +35,6 @@ export default function(Vue, { router, head, isClient }) {
   Vue.use(VTooltip, {
     defaultPlacement: 'top-end',
     defaultClass:
-      'bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs mb-1'
+      'bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs mb-1',
   })
 }

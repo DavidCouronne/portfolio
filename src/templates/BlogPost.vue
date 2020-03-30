@@ -6,15 +6,15 @@
           <span
             class="text-blue-500 font-medium uppercase tracking-wide text-sm"
           >
-            <g-link :to="$page.blog.category.path" class="hover:underline">
-              {{ $page.blog.category.title }}
-            </g-link>
+            <g-link :to="$page.blog.category.path" class="hover:underline">{{
+              $page.blog.category.title
+            }}</g-link>
           </span>
           <h1 class="text-5xl font-medium leading-none mt-0">
             {{ $page.blog.title }}
           </h1>
           <div
-            class="text-2xl pt-4 pb-10 text-gray-700 "
+            class="text-2xl pt-4 pb-10 text-gray-700"
             v-html="$page.blog.description"
           ></div>
         </section>
@@ -53,9 +53,9 @@
                 </span>
               </p>
               <p class="text-gray-700">
-                <time :datetime="$page.blog.datetime">
-                  {{ $page.blog.humanTime }}
-                </time>
+                <time :datetime="$page.blog.datetime">{{
+                  $page.blog.humanTime
+                }}</time>
                 &nbsp;&middot;&nbsp; {{ $page.blog.timeToRead }} min read
               </p>
             </div>
@@ -67,7 +67,7 @@
       </section>
 
       <div class="lg:mx-32 md:mx-16 px-4 sm:px-0">
-        <section class="post-content container mx-auto relative  text-gray-700">
+        <section class="post-content container mx-auto relative text-gray-700">
           <div
             class="post-content-text text-xl rich-text font-sans"
             v-html="$page.blog.content"
@@ -199,7 +199,7 @@ import PostListItem from '~/components/PostListItem.vue'
 
 export default {
   components: {
-    PostListItem
+    PostListItem,
   },
   metaInfo() {
     return {
@@ -207,38 +207,38 @@ export default {
       meta: [
         {
           name: 'description',
-          content: this.$page.blog.description
+          content: this.$page.blog.description,
         },
         // open-graph tags
         {
           property: 'og:title',
-          content: this.$page.blog.title
+          content: this.$page.blog.title,
         },
         {
           property: 'og:description',
-          content: this.$page.blog.description
+          content: this.$page.blog.description,
         },
         {
           property: 'og:image',
-          content: this.$page.blog.cover_image || ''
+          content: this.$page.blog.cover_image || '',
         },
         {
           property: 'og:url',
-          content: this.$static.metadata.siteUrl + this.$page.blog.path
+          content: this.$static.metadata.siteUrl + this.$page.blog.path,
         },
         // twitter card
         {
           name: 'twitter:card',
           content: this.$page.blog.cover_image
             ? 'summary_large_image'
-            : 'summary'
+            : 'summary',
         },
         {
           name: 'twitter:creator',
-          content: '@nollan94'
+          content: '@nollan94',
         },
         { name: 'twitter:title', content: this.$page.blog.title },
-        { name: 'twitter:description', content: this.$page.blog.description }
+        { name: 'twitter:description', content: this.$page.blog.description },
       ],
       // Some ld+json tags
       script: [
@@ -251,19 +251,19 @@ export default {
             datePublished: this.$page.blog.datetime,
             dateModified: this.$page.blog.datetime,
             author: {
-              name: 'David Couronné'
+              name: 'David Couronné',
             },
             headline: this.$page.blog.title,
             image: this.$page.blog.cover_image,
             mainEntityOfPage: {
               '@type': 'WebPage',
-              '@id': this.$static.metadata.siteUrl + this.$page.blog.path
-            }
-          }
-        }
-      ]
+              '@id': this.$static.metadata.siteUrl + this.$page.blog.path,
+            },
+          },
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

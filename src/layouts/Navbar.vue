@@ -4,7 +4,7 @@
       class="flex items-center justify-between flex-wrap container mx-auto px-4 sm:px-0 py-4 transition-all transition-500"
       v-bind:class="{
         'opacity-100': !disableScroll && scrollPosition > headerHeight,
-        'opacity-0': !disableScroll && scrollPosition < headerHeight
+        'opacity-0': !disableScroll && scrollPosition < headerHeight,
       }"
     >
       <div class="block flex-grow flex items-center w-auto">
@@ -24,7 +24,7 @@
               class="hover:text-white"
               v-bind:class="{
                 'mr-4':
-                  index != Object.keys($static.metadata.navigation).length - 1
+                  index != Object.keys($static.metadata.navigation).length - 1,
               }"
             >
               <a
@@ -52,7 +52,8 @@
               v-for="(element, index) in $static.metadata.social"
               class="hover:text-white hidden sm:block"
               v-bind:class="{
-                'mr-6': index != Object.keys($static.metadata.social).length - 1
+                'mr-6':
+                  index != Object.keys($static.metadata.social).length - 1,
               }"
             >
               <span class="text-sm">
@@ -86,18 +87,18 @@ import ThemeSwitcher from '~/components/ThemeSwitcher'
 
 export default {
   components: {
-    ThemeSwitcher
+    ThemeSwitcher,
   },
   props: {
     disableScroll: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
-  data: function() {
+  data: function () {
     return {
       scrollPosition: null,
-      headerHeight: 0
+      headerHeight: 0,
     }
   },
 
@@ -107,7 +108,7 @@ export default {
     },
     setHeaderHeight(height) {
       this.headerHeight = height
-    }
+    },
   },
 
   mounted() {
@@ -116,7 +117,7 @@ export default {
       this.setHeaderHeight(height)
       window.addEventListener('scroll', this.updateScroll)
     }
-  }
+  },
 }
 </script>
 

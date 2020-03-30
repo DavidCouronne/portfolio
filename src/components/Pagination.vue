@@ -16,7 +16,9 @@
       v-for="page in pages"
       :key="page.name"
       v-bind:class="[
-        isCurrentPage(currentPage, page.name) ? 'border-l-2 border-l-black' : ''
+        isCurrentPage(currentPage, page.name)
+          ? 'border-l-2 border-l-black'
+          : '',
       ]"
       class="w-10 relative block py-2 text-center leading-tight bg-white border border-gray-300 text-black rounded hover:bg-gray-300 ml-1 mr-1"
     >
@@ -52,8 +54,8 @@ export default {
     maxVisibleButtons: {
       type: Number,
       required: false,
-      default: 3
-    }
+      default: 3,
+    },
   },
   methods: {
     isFirstPage(currentPage, totalPages) {
@@ -72,7 +74,7 @@ export default {
       return currentPage === 2
         ? `${this.baseUrl}/`
         : `${this.baseUrl}/${currentPage - 1}`
-    }
+    },
   },
   computed: {
     startPage() {
@@ -95,11 +97,11 @@ export default {
         range.push({
           name: i,
           isDisabled: i === this.currentPage,
-          link: i === 1 ? `${this.baseUrl}/` : `${this.baseUrl}/${i}`
+          link: i === 1 ? `${this.baseUrl}/` : `${this.baseUrl}/${i}`,
         })
       }
       return range
-    }
-  }
+    },
+  },
 }
 </script>

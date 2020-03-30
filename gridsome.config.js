@@ -1,7 +1,7 @@
 const { social } = require('./content/site/social')
 const {
   headerNavigation,
-  footerNavigation
+  footerNavigation,
 } = require('./content/site/navigation')
 const marked = require('marked')
 // This is where project configuration and plugin options are located.
@@ -19,14 +19,14 @@ module.exports = {
     twitter: '@nollan94',
     social: social(),
     headerNavigation: headerNavigation(),
-    footerNavigation: footerNavigation()
+    footerNavigation: footerNavigation(),
   },
   plugins: [
     {
       use: '@gridsome/plugin-sitemap',
       options: {
-        cacheTime: 600000 // default
-      }
+        cacheTime: 600000, // default
+      },
     },
     {
       use: 'gridsome-plugin-feed',
@@ -42,33 +42,33 @@ module.exports = {
         },
         htmlFields: ['description', 'content'],
         enforceTrailingSlashes: false,
-        filterNodes: node => true,
-        nodeToFeedItem: node => ({
+        filterNodes: (node) => true,
+        nodeToFeedItem: (node) => ({
           title: node.title,
           date: node.date || node.fields.date,
           content: marked(node.content),
         }),
       },
     },
-    {
-      use: 'gridsome-plugin-pwa',
-      options: {
-        title: 'David Couronné',
-        startUrl: '/',
-        display: 'standalone',
-        statusBarStyle: 'default',
-        manifestPath: 'manifest.json',
-        disableServiceWorker: false,
-        serviceWorkerPath: 'service-worker.js',
-        cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
-        shortName: 'davidcouronne',
-        themeColor: '#2196f3',
-        backgroundColor: '#2196f3',
-        icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
-        msTileImage: '',
-        msTileColor: '#2196f3'
-      }
-    },
+    // {
+    //   use: 'gridsome-plugin-pwa',
+    //   options: {
+    //     title: 'David Couronné',
+    //     startUrl: '/',
+    //     display: 'standalone',
+    //     statusBarStyle: 'default',
+    //     manifestPath: 'manifest.json',
+    //     disableServiceWorker: false,
+    //     serviceWorkerPath: 'service-worker.js',
+    //     cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
+    //     shortName: 'davidcouronne',
+    //     themeColor: '#2196f3',
+    //     backgroundColor: '#2196f3',
+    //     icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
+    //     msTileImage: '',
+    //     msTileColor: '#2196f3'
+    //   }
+    //},
     {
       use: 'gridsome-plugin-tailwindcss',
       options: {
@@ -80,7 +80,7 @@ module.exports = {
             'table-striped',
             'table-bordered',
             'table-hover',
-            'table-sm'
+            'table-sm',
           ],
           whitelistPatterns: [
             /fa-$/,
@@ -88,23 +88,23 @@ module.exports = {
             /code$/,
             /pre$/,
             /table$/,
-            /table-$/
-          ]
+            /table-$/,
+          ],
         },
         presetEnvConfig: {},
         shouldPurge: false,
         shouldImport: true,
         shouldTimeTravel: true,
-        shouldPurgeUnusedKeyframes: true
-      }
+        shouldPurgeUnusedKeyframes: true,
+      },
     },
 
     {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Author',
-        path: './content/author/*.md'
-      }
+        path: './content/author/*.md',
+      },
     },
     {
       use: '@gridsome/source-filesystem',
@@ -115,15 +115,15 @@ module.exports = {
           author: 'Author',
           tags: {
             typeName: 'Tag',
-            create: true
+            create: true,
           },
           category: {
             typeName: 'Category',
-            create: true
-          }
-        }
-      }
-    }
+            create: true,
+          },
+        },
+      },
+    },
   ],
   transformers: {
     remark: {
@@ -143,9 +143,9 @@ module.exports = {
               mdx: `markdown`,
               md: `markdown`,
               ml: `fsharp`,
-              styl: `stylus`
-            }
-          }
+              styl: `stylus`,
+            },
+          },
         ],
         '@noxify/gridsome-remark-table-align',
         [
@@ -153,35 +153,35 @@ module.exports = {
           {
             table: 'table table-striped',
             'tableCell[align=center]': 'text-center',
-            'tableCell[align=right]': 'text-right'
-          }
-        ]
-      ]
-    }
+            'tableCell[align=right]': 'text-right',
+          },
+        ],
+      ],
+    },
   },
   templates: {
     Blog: [
       {
-        path: '/blog/:title'
-      }
+        path: '/blog/:title',
+      },
     ],
     Category: [
       {
         path: '/category/:title',
-        component: '~/templates/Category.vue'
-      }
+        component: '~/templates/Category.vue',
+      },
     ],
     Author: [
       {
         path: '/author/:name',
-        component: '~/templates/Author.vue'
-      }
+        component: '~/templates/Author.vue',
+      },
     ],
     Tag: [
       {
         path: '/tags/:title',
-        component: '~/templates/Tag.vue'
-      }
-    ]
-  }
+        component: '~/templates/Tag.vue',
+      },
+    ],
+  },
 }
