@@ -195,76 +195,76 @@
 </page-query>
 
 <script>
-import PostListItem from '~/components/PostListItem.vue'
+import PostListItem from "~/components/PostListItem.vue";
 
 export default {
   components: {
-    PostListItem,
+    PostListItem
   },
   metaInfo() {
     return {
       title: this.$page.blog.title,
       meta: [
         {
-          name: 'description',
-          content: this.$page.blog.description,
+          name: "description",
+          content: this.$page.blog.description
         },
         // open-graph tags
         {
-          property: 'og:title',
-          content: this.$page.blog.title,
+          property: "og:title",
+          content: this.$page.blog.title
         },
         {
-          property: 'og:description',
-          content: this.$page.blog.description,
+          property: "og:description",
+          content: this.$page.blog.description
         },
         {
-          property: 'og:image',
-          content: this.$page.blog.cover_image || '',
+          property: "og:image",
+          content: this.$page.blog.cover_image || ""
         },
         {
-          property: 'og:url',
-          content: this.$static.metadata.siteUrl + this.$page.blog.path,
+          property: "og:url",
+          content: this.$static.metadata.siteUrl + this.$page.blog.path
         },
         // twitter card
         {
-          name: 'twitter:card',
+          name: "twitter:card",
           content: this.$page.blog.cover_image
-            ? 'summary_large_image'
-            : 'summary',
+            ? "summary_large_image"
+            : "summary"
         },
         {
-          name: 'twitter:creator',
-          content: '@nollan94',
+          name: "twitter:creator",
+          content: "@nollan94"
         },
-        { name: 'twitter:title', content: this.$page.blog.title },
-        { name: 'twitter:description', content: this.$page.blog.description },
+        { name: "twitter:title", content: this.$page.blog.title },
+        { name: "twitter:description", content: this.$page.blog.description }
       ],
       // Some ld+json tags
       script: [
         {
-          type: 'application/ld+json',
+          type: "application/ld+json",
           json: {
-            '@context': 'http://schema.org',
-            '@type': 'BlogPosting',
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
             description: this.$page.blog.description,
             datePublished: this.$page.blog.datetime,
             dateModified: this.$page.blog.datetime,
             author: {
-              name: 'David Couronné',
+              name: "David Couronné"
             },
             headline: this.$page.blog.title,
             image: this.$page.blog.cover_image,
             mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': this.$static.metadata.siteUrl + this.$page.blog.path,
-            },
-          },
-        },
-      ],
-    }
-  },
-}
+              "@type": "WebPage",
+              "@id": this.$static.metadata.siteUrl + this.$page.blog.path
+            }
+          }
+        }
+      ]
+    };
+  }
+};
 </script>
 
 <static-query>

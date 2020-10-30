@@ -61,10 +61,10 @@ export default {
     record: {},
     border: {
       type: Boolean,
-      default: true,
-    },
-  },
-}
+      default: true
+    }
+  }
+};
 </script>
 
 <style></style>

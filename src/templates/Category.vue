@@ -76,24 +76,24 @@
 </page-query>
 
 <script>
-import PostListItem from '~/components/PostListItem.vue'
-import Pagination from '~/components/Pagination.vue'
+import PostListItem from "~/components/PostListItem.vue";
+import Pagination from "~/components/Pagination.vue";
 
 export default {
   components: {
     Pagination,
-    PostListItem,
+    PostListItem
   },
   computed: {
-    postLabel: function () {
-      var pluralize = require('pluralize')
-      return pluralize('post', this.$page.category.belongsTo.totalCount)
-    },
+    postLabel: function() {
+      var pluralize = require("pluralize");
+      return pluralize("post", this.$page.category.belongsTo.totalCount);
+    }
   },
   metaInfo() {
     return {
-      title: this.$page.category.title,
-    }
-  },
-}
+      title: this.$page.category.title
+    };
+  }
+};
 </script>

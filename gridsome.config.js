@@ -1,9 +1,9 @@
-const { social } = require('./content/site/social')
+const { social } = require("./content/site/social");
 const {
   headerNavigation,
-  footerNavigation,
-} = require('./content/site/navigation')
-const marked = require('marked')
+  footerNavigation
+} = require("./content/site/navigation");
+const marked = require("marked");
 // This is where project configuration and plugin options are located.
 // Learn more: https://gridsome.org/docs/config
 
@@ -11,44 +11,44 @@ const marked = require('marked')
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'David Couronné',
-  siteDescription: 'Welcome to my Blog',
-  siteUrl: 'https://davidcouronne.netlify.com/',
+  siteName: "David Couronné",
+  siteDescription: "Welcome to my Blog",
+  siteUrl: "https://davidcouronne.netlify.com/",
   metadata: {
-    author: 'David Couronné',
-    twitter: '@nollan94',
+    author: "David Couronné",
+    twitter: "@nollan94",
     social: social(),
     headerNavigation: headerNavigation(),
-    footerNavigation: footerNavigation(),
+    footerNavigation: footerNavigation()
   },
   plugins: [
     {
-      use: '@gridsome/plugin-sitemap',
+      use: "@gridsome/plugin-sitemap",
       options: {
-        cacheTime: 600000, // default
-      },
+        cacheTime: 600000 // default
+      }
     },
     {
-      use: 'gridsome-plugin-feed',
+      use: "gridsome-plugin-feed",
       options: {
-        contentTypes: ['Blog'],
+        contentTypes: ["Blog"],
         feedOptions: {
           title: "David Couronné's Blog",
-          description: 'Blog de David Couronné',
+          description: "Blog de David Couronné"
         },
         rss: {
           enabled: true,
-          output: '/blog/index.xml',
+          output: "/blog/index.xml"
         },
-        htmlFields: ['description', 'content'],
+        htmlFields: ["description", "content"],
         enforceTrailingSlashes: false,
-        filterNodes: (node) => true,
-        nodeToFeedItem: (node) => ({
+        filterNodes: node => true,
+        nodeToFeedItem: node => ({
           title: node.title,
           date: node.date || node.fields.date,
-          content: marked(node.content),
-        }),
-      },
+          content: marked(node.content)
+        })
+      }
     },
     // {
     //   use: 'gridsome-plugin-pwa',
@@ -70,17 +70,17 @@ module.exports = {
     //   }
     //},
     {
-      use: 'gridsome-plugin-tailwindcss',
+      use: "gridsome-plugin-tailwindcss",
       options: {
-        tailwindConfig: './tailwind.config.js',
+        tailwindConfig: "./tailwind.config.js",
         purgeConfig: {
           whitelist: [
-            'svg-inline--fa',
-            'table',
-            'table-striped',
-            'table-bordered',
-            'table-hover',
-            'table-sm',
+            "svg-inline--fa",
+            "table",
+            "table-striped",
+            "table-bordered",
+            "table-hover",
+            "table-sm"
           ],
           whitelistPatterns: [
             /fa-$/,
@@ -88,49 +88,49 @@ module.exports = {
             /code$/,
             /pre$/,
             /table$/,
-            /table-$/,
-          ],
+            /table-$/
+          ]
         },
         presetEnvConfig: {},
         shouldPurge: false,
         shouldImport: true,
         shouldTimeTravel: true,
-        shouldPurgeUnusedKeyframes: true,
-      },
+        shouldPurgeUnusedKeyframes: true
+      }
     },
 
     {
-      use: '@gridsome/source-filesystem',
+      use: "@gridsome/source-filesystem",
       options: {
-        typeName: 'Author',
-        path: './content/author/*.md',
-      },
+        typeName: "Author",
+        path: "./content/author/*.md"
+      }
     },
     {
-      use: '@gridsome/source-filesystem',
+      use: "@gridsome/source-filesystem",
       options: {
-        typeName: 'Blog',
-        path: './content/blog/**/*.md',
+        typeName: "Blog",
+        path: "./content/blog/**/*.md",
         refs: {
-          author: 'Author',
+          author: "Author",
           tags: {
-            typeName: 'Tag',
-            create: true,
+            typeName: "Tag",
+            create: true
           },
           category: {
-            typeName: 'Category',
-            create: true,
-          },
-        },
-      },
-    },
+            typeName: "Category",
+            create: true
+          }
+        }
+      }
+    }
   ],
   transformers: {
     remark: {
       plugins: [
-        'gridsome-plugin-remark-container',
+        "gridsome-plugin-remark-container",
         [
-          'gridsome-plugin-remark-prismjs-all',
+          "gridsome-plugin-remark-prismjs-all",
           {
             aliases: {
               dosini: `ini`,
@@ -143,45 +143,45 @@ module.exports = {
               mdx: `markdown`,
               md: `markdown`,
               ml: `fsharp`,
-              styl: `stylus`,
-            },
-          },
+              styl: `stylus`
+            }
+          }
         ],
-        '@noxify/gridsome-remark-table-align',
+        "@noxify/gridsome-remark-table-align",
         [
-          '@noxify/gridsome-remark-classes',
+          "@noxify/gridsome-remark-classes",
           {
-            table: 'table table-striped',
-            'tableCell[align=center]': 'text-center',
-            'tableCell[align=right]': 'text-right',
-          },
-        ],
-      ],
-    },
+            table: "table table-striped",
+            "tableCell[align=center]": "text-center",
+            "tableCell[align=right]": "text-right"
+          }
+        ]
+      ]
+    }
   },
   templates: {
     Blog: [
       {
-        path: '/blog/:title',
-      },
+        path: "/blog/:title"
+      }
     ],
     Category: [
       {
-        path: '/category/:title',
-        component: '~/templates/Category.vue',
-      },
+        path: "/category/:title",
+        component: "~/templates/Category.vue"
+      }
     ],
     Author: [
       {
-        path: '/author/:name',
-        component: '~/templates/Author.vue',
-      },
+        path: "/author/:name",
+        component: "~/templates/Author.vue"
+      }
     ],
     Tag: [
       {
-        path: '/tags/:title',
-        component: '~/templates/Tag.vue',
-      },
-    ],
-  },
-}
+        path: "/tags/:title",
+        component: "~/templates/Tag.vue"
+      }
+    ]
+  }
+};

@@ -1,9 +1,9 @@
 //tailwind border color plugin powered by
 //https://github.com/tailwindcss/tailwindcss/pull/560#issuecomment-503222143
-var _ = require('lodash')
-var flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette')
-  .default
-const { colors } = require('tailwindcss/defaultTheme')
+var _ = require("lodash");
+var flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette")
+  .default;
+const { colors } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   theme: {
@@ -11,176 +11,176 @@ module.exports = {
       gray: colors.gray,
       white: colors.white,
       black: colors.black,
-      blue: colors.blue,
+      blue: colors.blue
     },
     fontFamily: {
       sans: [
-        'Roboto',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        'Helvetica Neue',
-        'Arial',
-        'Noto Sans',
-        'sans-serif',
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji',
-      ],
+        "Roboto",
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Helvetica Neue",
+        "Arial",
+        "Noto Sans",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji"
+      ]
     },
     borderWidth: {
-      default: '1px',
-      '0': '0',
-      '2': '2px',
-      '3': '3px',
-      '4': '4px',
-      '6': '6px',
-      '8': '8px',
+      default: "1px",
+      "0": "0",
+      "2": "2px",
+      "3": "3px",
+      "4": "4px",
+      "6": "6px",
+      "8": "8px"
     },
     flex: {
-      '1': '1 1 0%',
-      auto: '1 1 auto',
-      initial: '0 1 auto',
-      none: 'none',
-      post: '1 1 300px',
-      '100': '1 1 100%',
-      'post-large-content': '0 1 361px',
+      "1": "1 1 0%",
+      auto: "1 1 auto",
+      initial: "0 1 auto",
+      none: "none",
+      post: "1 1 300px",
+      "100": "1 1 100%",
+      "post-large-content": "0 1 361px"
     },
     zIndex: {
-      '-10': '-10',
-      '0': 0,
-      '10': 10,
-      '20': 20,
-      '30': 30,
-      '40': 40,
-      '50': 50,
-      '25': 25,
-      '50': 50,
-      '75': 75,
-      '100': 100,
-      '1000': 1000,
-      auto: 'auto',
+      "-10": "-10",
+      "0": 0,
+      "10": 10,
+      "20": 20,
+      "30": 30,
+      "40": 40,
+      "50": 50,
+      "25": 25,
+      "50": 50,
+      "75": 75,
+      "100": 100,
+      "1000": 1000,
+      auto: "auto"
     },
     corePlugins: {
-      container: false,
+      container: false
     },
     extend: {},
     radialGradients: {
       shapes: {
         // defaults to this value
-        default: 'ellipse',
+        default: "ellipse"
       },
       sizes: {
         // defaults to this value
-        default: '',
+        default: ""
       },
       positions: {
         // defaults to these values
-        default: 'center',
-        t: 'top',
+        default: "center",
+        t: "top"
       },
       colors: {
         // defaults to {}
-        'gray-to-black': [
-          'rgba(25, 25, 25, 1)',
-          'rgba(8, 8, 8, 1)',
-          'rgba(0, 0, 0, 1)',
-        ],
-      },
-    },
+        "gray-to-black": [
+          "rgba(25, 25, 25, 1)",
+          "rgba(8, 8, 8, 1)",
+          "rgba(0, 0, 0, 1)"
+        ]
+      }
+    }
   },
   variants: {},
   plugins: [
-    function ({ addComponents }) {
+    function({ addComponents }) {
       addComponents({
-        '.container': {
-          maxWidth: '100%',
-          '@screen sm': {
-            maxWidth: '640px',
+        ".container": {
+          maxWidth: "100%",
+          "@screen sm": {
+            maxWidth: "640px"
           },
-          '@screen md': {
-            maxWidth: '768px',
+          "@screen md": {
+            maxWidth: "768px"
           },
-          '@screen lg': {
-            maxWidth: '1024px',
+          "@screen lg": {
+            maxWidth: "1024px"
           },
-          '@screen xl': {
-            maxWidth: '1040px',
-          },
-        },
-      })
+          "@screen xl": {
+            maxWidth: "1040px"
+          }
+        }
+      });
     },
-    function ({ addUtilities, e, theme, variants }) {
-      const colors = flattenColorPalette(theme('borderColor'))
+    function({ addUtilities, e, theme, variants }) {
+      const colors = flattenColorPalette(theme("borderColor"));
 
       const utilities = _.flatMap(
-        _.omit(colors, 'default'),
+        _.omit(colors, "default"),
         (value, modifier) => ({
           [`.${e(`border-t-${modifier}`)}`]: {
-            borderTopColor: `${value}`,
+            borderTopColor: `${value}`
           },
           [`.${e(`border-r-${modifier}`)}`]: {
-            borderRightColor: `${value}`,
+            borderRightColor: `${value}`
           },
           [`.${e(`border-b-${modifier}`)}`]: {
-            borderBottomColor: `${value}`,
+            borderBottomColor: `${value}`
           },
           [`.${e(`border-l-${modifier}`)}`]: {
-            borderLeftColor: `${value}`,
-          },
+            borderLeftColor: `${value}`
+          }
         })
-      )
+      );
 
-      addUtilities(utilities, variants('borderColor'))
+      addUtilities(utilities, variants("borderColor"));
     },
-    function ({ addBase, config }) {
+    function({ addBase, config }) {
       addBase({
-        body: { fontFamily: config('theme.fontFamily.sans').join(', ') },
+        body: { fontFamily: config("theme.fontFamily.sans").join(", ") },
         h1: {
-          fontSize: config('theme.fontSize.5xl'),
-          fontWeight: config('theme.fontWeight.bold'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4'),
+          fontSize: config("theme.fontSize.5xl"),
+          fontWeight: config("theme.fontWeight.bold"),
+          fontFamily: config("theme.fontFamily.sans").join(", "),
+          marginTop: config("theme.margin.4"),
+          marginBottom: config("theme.margin.4")
         },
         h2: {
-          fontSize: config('theme.fontSize.4xl'),
-          fontWeight: config('theme.fontWeight.bold'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4'),
+          fontSize: config("theme.fontSize.4xl"),
+          fontWeight: config("theme.fontWeight.bold"),
+          fontFamily: config("theme.fontFamily.sans").join(", "),
+          marginTop: config("theme.margin.4"),
+          marginBottom: config("theme.margin.4")
         },
         h3: {
-          fontSize: config('theme.fontSize.3xl'),
-          fontWeight: config('theme.fontWeight.bold'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4'),
+          fontSize: config("theme.fontSize.3xl"),
+          fontWeight: config("theme.fontWeight.bold"),
+          fontFamily: config("theme.fontFamily.sans").join(", "),
+          marginTop: config("theme.margin.4"),
+          marginBottom: config("theme.margin.4")
         },
         h4: {
-          fontSize: config('theme.fontSize.2xl'),
-          fontWeight: config('theme.fontWeight.bold'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4'),
+          fontSize: config("theme.fontSize.2xl"),
+          fontWeight: config("theme.fontWeight.bold"),
+          fontFamily: config("theme.fontFamily.sans").join(", "),
+          marginTop: config("theme.margin.4"),
+          marginBottom: config("theme.margin.4")
         },
         h5: {
-          fontSize: config('theme.fontSize.xl'),
-          fontWeight: config('theme.fontWeight.bold'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4'),
+          fontSize: config("theme.fontSize.xl"),
+          fontWeight: config("theme.fontWeight.bold"),
+          fontFamily: config("theme.fontFamily.sans").join(", "),
+          marginTop: config("theme.margin.4"),
+          marginBottom: config("theme.margin.4")
         },
         h6: {
-          fontSize: config('theme.fontSize.lg'),
-          fontWeight: config('theme.fontWeight.bold'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4'),
-        },
-      })
-    },
-  ],
-}
+          fontSize: config("theme.fontSize.lg"),
+          fontWeight: config("theme.fontWeight.bold"),
+          fontFamily: config("theme.fontFamily.sans").join(", "),
+          marginTop: config("theme.margin.4"),
+          marginBottom: config("theme.margin.4")
+        }
+      });
+    }
+  ]
+};

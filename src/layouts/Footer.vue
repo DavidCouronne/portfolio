@@ -18,7 +18,7 @@
             class="hover:text-white"
             v-bind:class="{
               'mr-6':
-                index != Object.keys($static.metadata.navigation).length - 1,
+                index != Object.keys($static.metadata.navigation).length - 1
             }"
           >
             <a
@@ -53,8 +53,8 @@ query {
 export default {
   computed: {
     currentYear() {
-      return new Date().getFullYear()
-    },
-  },
-}
+      return new Date().getFullYear();
+    }
+  }
+};
 </script>

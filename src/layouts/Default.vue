@@ -21,18 +21,18 @@ export default {
   props: {
     hideHeader: {
       type: Boolean,
-      default: false,
+      default: false
     },
     disableScroll: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
 
   metaInfo: {
     bodyAttrs: {
-      class: 'm-0',
-    },
-  },
-}
+      class: "m-0"
+    }
+  }
+};
 </script>

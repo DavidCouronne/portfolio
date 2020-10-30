@@ -15,7 +15,7 @@
               class="hover:text-white"
               v-bind:class="{
                 'mr-4':
-                  index != Object.keys($static.metadata.navigation).length - 1,
+                  index != Object.keys($static.metadata.navigation).length - 1
               }"
             >
               <a
@@ -43,8 +43,7 @@
               v-for="(element, index) in $static.metadata.social"
               class="hover:text-white hidden sm:block"
               v-bind:class="{
-                'mr-6':
-                  index != Object.keys($static.metadata.social).length - 1,
+                'mr-6': index != Object.keys($static.metadata.social).length - 1
               }"
             >
               <span class="text-sm">
@@ -82,13 +81,13 @@
 </template>
 
 <script>
-import ThemeSwitcher from '~/components/ThemeSwitcher'
+import ThemeSwitcher from "~/components/ThemeSwitcher";
 
 export default {
   components: {
-    ThemeSwitcher,
-  },
-}
+    ThemeSwitcher
+  }
+};
 </script>
 
 <static-query>

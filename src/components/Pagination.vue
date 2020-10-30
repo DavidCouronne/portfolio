@@ -16,9 +16,7 @@
       v-for="page in pages"
       :key="page.name"
       v-bind:class="[
-        isCurrentPage(currentPage, page.name)
-          ? 'border-l-2 border-l-black'
-          : '',
+        isCurrentPage(currentPage, page.name) ? 'border-l-2 border-l-black' : ''
       ]"
       class="w-10 relative block py-2 text-center leading-tight bg-white border border-gray-300 text-black rounded hover:bg-gray-300 ml-1 mr-1"
     >
@@ -54,40 +52,40 @@ export default {
     maxVisibleButtons: {
       type: Number,
       required: false,
-      default: 3,
-    },
+      default: 3
+    }
   },
   methods: {
     isFirstPage(currentPage, totalPages) {
-      return currentPage == 1
+      return currentPage == 1;
     },
     isLastPage(currentPage, totalPages) {
-      return currentPage == totalPages
+      return currentPage == totalPages;
     },
     isCurrentPage(currentPage, pageElement) {
-      return currentPage == pageElement
+      return currentPage == pageElement;
     },
     nextPage(currentPage, totalPages) {
-      return `${this.baseUrl}/${currentPage + 1}`
+      return `${this.baseUrl}/${currentPage + 1}`;
     },
     previousPage(currentPage, totalPages) {
       return currentPage === 2
         ? `${this.baseUrl}/`
-        : `${this.baseUrl}/${currentPage - 1}`
-    },
+        : `${this.baseUrl}/${currentPage - 1}`;
+    }
   },
   computed: {
     startPage() {
       if (this.currentPage === 1) {
-        return 1
+        return 1;
       }
       if (this.currentPage === this.totalPages) {
-        return this.currentPage - 1
+        return this.currentPage - 1;
       }
-      return this.currentPage - 1
+      return this.currentPage - 1;
     },
     pages() {
-      const range = []
+      const range = [];
       for (
         let i = this.startPage;
         i <=
@@ -97,11 +95,11 @@ export default {
         range.push({
           name: i,
           isDisabled: i === this.currentPage,
-          link: i === 1 ? `${this.baseUrl}/` : `${this.baseUrl}/${i}`,
-        })
+          link: i === 1 ? `${this.baseUrl}/` : `${this.baseUrl}/${i}`
+        });
       }
-      return range
-    },
-  },
-}
+      return range;
+    }
+  }
+};
 </script>

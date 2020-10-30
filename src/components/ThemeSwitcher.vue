@@ -48,32 +48,32 @@
 </template>
 
 <script>
-let themes = ['light', 'dark']
+let themes = ["light", "dark"];
 
 export default {
   data() {
     return {
-      theme: 'light',
-    }
+      theme: "light"
+    };
   },
   computed: {
     nextTheme() {
-      const currentIndex = themes.indexOf(this.theme)
-      const nextIndex = (currentIndex + 1) % themes.length
-      return themes[nextIndex]
-    },
+      const currentIndex = themes.indexOf(this.theme);
+      const nextIndex = (currentIndex + 1) % themes.length;
+      return themes[nextIndex];
+    }
   },
   methods: {
     toggleTheme() {
-      const currentIndex = themes.indexOf(this.theme)
-      const nextIndex = (currentIndex + 1) % themes.length
-      window.__setPreferredTheme(themes[nextIndex])
-      this.theme = themes[nextIndex]
-    },
+      const currentIndex = themes.indexOf(this.theme);
+      const nextIndex = (currentIndex + 1) % themes.length;
+      window.__setPreferredTheme(themes[nextIndex]);
+      this.theme = themes[nextIndex];
+    }
   },
   async mounted() {
     // set default
-    if (typeof window.__theme !== 'undefined') this.theme = window.__theme
-  },
-}
+    if (typeof window.__theme !== "undefined") this.theme = window.__theme;
+  }
+};
 </script>
